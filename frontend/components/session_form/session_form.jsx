@@ -37,6 +37,17 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    // let email ({
+    //   if (this.props.formType === 'signup') {
+    //     <label>Email:
+    //           <input type="text"
+    //         value={this.state.email}
+    //         onChange={this.update('email')}
+    //         className="login-input"
+    //       />
+    //     </label>
+    //   }
+    // }
     
     return (
       <div className="login-form-container">
@@ -55,7 +66,6 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
-
             <br />
             <label>Password:
               <input type="password"
