@@ -10,9 +10,9 @@ ActiveRecord::Base.transaction do
   User.destroy_all
 
   demo_user = {
-    'username' => 'demoawesomeanimation',
-    'password' => 'passwordpassword',
-    'email' => 'demogod@test.net'
+    'username' => 'demouser',
+    'password' => 'password',
+    'email' => 'demo@user.com'
   }
 
   User.create!(demo_user)
