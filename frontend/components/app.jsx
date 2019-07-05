@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import Splash from './splash_page/splash';
 import { AuthRoute } from '../../frontend/util/route_util';
 import {
   Route,
@@ -16,14 +17,14 @@ const App = () => (
     <header>
       <div className="app-title">
         
-          <GreetingContainer />
+          {/* <GreetingContainer /> */}
       </div>
     </header>
-    {/* <Switch>
-
-    </Switch> */}
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
+    <Switch>
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute path="/" component={Splash} /> 
+    </Switch>
   </div>
 )
 

@@ -1,0 +1,29 @@
+/* .splash-button a {
+  color: white;
+  background: #0000;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 5px;
+  height: 20px;
+  padding: 15px, 20px;
+}
+
+.splash-page {
+  background-size: cover;
+  background-image: url(https://minibrew.s3.amazonaws.com/media/images/barrels_Minibrew.width-1124.jpg);
+  background-repeat: no-repeat;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  height: 50px;
+} */

@@ -3,14 +3,9 @@
 
  }
 
- body {
-  background-size: cover;
-  background-image: url(https://minibrew.s3.amazonaws.com/media/images/barrels_Minibrew.width-1124.jpg)
- }
-
  .button {
   border-radius: 5%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: inline-block;
   cursor: pointer;
   box-sizing: border-box;
@@ -24,7 +19,10 @@
   justify-content: space-between;
  }
 
-.create-account {
+.login-form-container {
+    background-size: cover;
+    background-image: url(https://minibrew.s3.amazonaws.com/media/images/barrels_Minibrew.width-1124.jpg);
+    background-repeat: no-repeat;
     text-align: center;
     position: absolute;
     top: 0;
@@ -65,9 +63,11 @@
   padding-right: 125px;
   padding-top: 50px;
   padding-bottom: 50px;
+  height: 484px;
+  width: 395px;
 }
 
-.create-account .logo {
+.login-form-container .logo {
   width: 252px;
   height: 64px;
 }
@@ -78,6 +78,7 @@
   font-size: 13px;
   max-width: 300px;
   width: 100%;
+  outline: none;
 }
 
 .session-submit {
@@ -106,16 +107,64 @@
   width: 200px;
   font-size: 15px;
 }
-
-.input-icon {
-  padding-top: 1px;
-  transform: translate(20px);
-}
-
 .welcome-text {
   font-family: ProximaNova, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;
   color: #666666
+}
+
+.or {
+    margin: auto;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    border-radius: 18px;
+    padding-top: 8px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    color: #ddd;
+    border: 3px solid #ddd;
+}
+
+.demo-user-button {
+  background-color: steelblue;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+  height: 40px;
+  font-family: 'Russo One', sans-serif;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.demo-user-button:hover {
+  background-color: rgba(70, 131, 180, 0.733);
+}
+
+.errors {
+  background-color: indianred;
+  color: white;
+  padding: 5px, 0;
+}
+
+.input-icon {
+  padding-top: 1px;
+  transform: translate(20px);
+}
+
+.unbarreld {
+  font-size: 60px;
+  font-weight: bold;
+  color: #3e4040;
+}
+
+.sub-text {
+  font-weight: bold;
+  color: #acacac;
+  font-size: 12px;
+
 }
