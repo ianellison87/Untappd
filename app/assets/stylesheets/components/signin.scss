@@ -21,8 +21,8 @@
 
 .login-form-container {
     background-size: cover;
-    background-image: url(https://minibrew.s3.amazonaws.com/media/images/barrels_Minibrew.width-1124.jpg);
     background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.4)), image-url('barrel_background.jpg'); 
     text-align: center;
     position: absolute;
     top: 0;

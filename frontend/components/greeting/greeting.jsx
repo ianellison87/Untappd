@@ -7,20 +7,16 @@ const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <div className="splash">
       <nav className="login-signup">
-        <button className="splash-button"href="#/login">
-          Sign In
-        </button>
-        {/* &nbsp;or&nbsp; */}
-        <button className="splash-button">
-          <a href="#/signup">CREATE AN ACCOUNT</a>
-        </button>
+        <Link className="nav-btn" to="/login">SIGN IN</Link>
+        <Link className="nav-btn" to="/signup">CREATE AN ACCOUNT</Link>
       </nav>
-      <div>
+      <div className="splash-content">
         <div className="left-side">
-            <img src="https://untappd.akamaized.net/assets/custom/homepage/images/ut-logo-bottles.svg"/>
-        {/* </div>
-        <div className="right-side"> */}
-            <img className="phone-icon" src="https://untappd.akamaized.net/assets/custom/homepage/images/masthead-img-main.png"/>
+            <img className="unbarreld-logo" src="https://untappd.akamaized.net/assets/custom/homepage/images/ut-logo-bottles.svg"/>
+          <h2 className="tag-line">Discover and share your favorite beer.</h2>
+        </div>
+        <div className="right-side">
+          <img className="phone-icon" src={window.phone_image}/>
         </div>
       </div>
 

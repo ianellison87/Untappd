@@ -1,0 +1,72 @@
+.nav-btn {
+  color: white;
+  background: #0000;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 10px;
+  height: 20px;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* .splash-button a { 
+  border: none;
+  color: white;
+  padding: 15px, 20px;
+} */
+
+.splash-page {
+  background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.4)), image-url('barrel_background.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  height: 50px;
+}
+
+.phone-icon {
+  height: 90%;
+  width: 90%;
+}
+
+.login-signup {
+  padding: 10px;
+  margin: 10px;
+}
+
+.splash-content {
+  flex-direction: row;
+  display: flex;
+}
+
+.splash {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-btn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.tag-line {
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}

@@ -9,7 +9,38 @@ class SessionForm extends React.Component {
       password: '',
       email: ''
     };
+    this.demoLogin = this.demoLogin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  async demoLogin(e) {
+    e.preventDefault();
+
+    const demoUser = {
+      username: 'demouser',
+      password: 'password'
+    };
+
+    const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+    document.getElementById("username").focus();
+    for (let i = 1; i <= demoUser.username.length; i++) {
+      this.setState({ username: demoUser.username.substr(0, i) });
+      await sleep(50);
+    }
+
+    await sleep(250);
+
+    document.getElementById('password-input').focus();
+    for (let i = 1; i <= demoUser.password.length; i++) {
+      this.setState({ password: demoUser.password.substr(0, i) });
+      await sleep(50);
+    }
+
+    await sleep(250);
+
+    document.getElementById('submit-login').click();
+    document.getElementById('password-input').blur();
   }
 
   componentWillUnmount(){
@@ -66,8 +97,8 @@ class SessionForm extends React.Component {
               <br />
               <div className="inputs">
                 <label>
-                <img className="input-icon" src="https://untappd.akamaized.net/assets/v3/images/login_user_ico.png"/>
-                    <input type="text" 
+                  <img className="input-icon" src={window.user_icon}/>
+                    <input type="text"
                       value={this.state.username}
                       onChange={this.update('username')}
                       className="login-input"
@@ -78,7 +109,7 @@ class SessionForm extends React.Component {
               <br />
               <div className="inputs">
                 <label>
-                  <img className="input-icon" src="https://untappd.akamaized.net/assets/v3/images/login_email_ico.png" />
+                <img className="input-icon" src={window.email_icon} />
                     <input type="text"
                       value={this.state.email}
                       onChange={this.update('email')}
@@ -90,8 +121,9 @@ class SessionForm extends React.Component {
               <br />
               <div className="inputs">
                 <label>
-                  <img className="input-icon" src="https://untappd.akamaized.net/assets/v3/images/login_lock_ico.png" />
+                  <img className="input-icon" src={window.lock_icon} />
                     <input type="password"
+
                       value={this.state.password}
                       onChange={this.update('password')}
                       className="login-input"
@@ -131,7 +163,7 @@ class SessionForm extends React.Component {
             <br/>
             <br/>
               <div>
-                <input className="demo-user-button" type="submit" value="Demo User"/>
+                <input className="demo-user-button" type="button" value="Demo User" onClick={this.demoLogin}/>
               </div>
             <br/>
               
@@ -142,8 +174,9 @@ class SessionForm extends React.Component {
                 
                 <div className="inputs">
                   <label>
-                    <img className="input-icon" src="https://untappd.akamaized.net/assets/v3/images/login_user_ico.png" />
+                    <img className="input-icon" src={window.user_icon} />
                       <input type="text"
+                        id="username"
                         value={this.state.username}
                         onChange={this.update('username')}
                         className="login-input"
@@ -154,8 +187,9 @@ class SessionForm extends React.Component {
                   <br />
                 <div className="inputs">
                   <label>
-                    <img className="input-icon" src="https://untappd.akamaized.net/assets/v3/images/login_lock_ico.png" />
+                    <img className="input-icon" src={window.lock_icon} />
                       <input type="password"
+                        id="password-input"
                         value={this.state.password}
                         onChange={this.update('password')}
                         className="login-input"
@@ -164,7 +198,8 @@ class SessionForm extends React.Component {
                   </label>
                 </div>
                   <br />
-                <input className="session-submit" type="submit" value={this.props.formType} />
+                <input className="session-submit" type="submit" id="submit-login" value={this.props.formType} />
+
               </div>
             </form>
           </div>

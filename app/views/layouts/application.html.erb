@@ -7,12 +7,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+  <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+  <script type="text/javascript">
+    window.user_icon = "<%= image_url('login_user_icon.png') %>"
+  </script>
+  <script type="text/javascript">
+    window.barrel_background = "<%= image_url('barrel_background.jpg') %>"
+  </script>
+  <script type="text/javascript">
+    window.email_icon = "<%= image_url('login_email_icon.png') %>"
+  </script>
+  <script type="text/javascript">
+    window.lock_icon = "<%= image_url('login_lock_icon.png') %>"
+  </script>
+   <script type="text/javascript">
+     window.phone_image = "<%= image_url('phone_image.png') %>"
+   </script>
+
+  
     <% if logged_in? %>
   <script id="bootstrap-current-user" type="text/javascript">
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
   </script>
-  <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
   <% end %>
   </head>
 
