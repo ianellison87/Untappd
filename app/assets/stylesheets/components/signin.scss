@@ -130,7 +130,7 @@
 }
 
 .demo-user-button {
-  background-color: steelblue;
+  background-color: #354d89;
   border-radius: 5px;
   border: none;
   width: 300px;
@@ -143,6 +143,7 @@
 
 .demo-user-button:hover {
   background-color: rgba(70, 131, 180, 0.733);
+  cursor: pointer;
 }
 
 .errors {
@@ -160,6 +161,7 @@
   font-size: 60px;
   font-weight: bold;
   color: #3e4040;
+  text-decoration: none;
 }
 
 .sub-text {

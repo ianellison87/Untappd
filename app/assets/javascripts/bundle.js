@@ -423,6 +423,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var SessionForm =
 /*#__PURE__*/
 function (_React$Component) {
@@ -576,7 +577,10 @@ function (_React$Component) {
           className: "login-form-box"
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "unbarreld"
-        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h1", null, "UNBARRELD")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Link"], {
+          className: "unbarreld",
+          to: '/'
+        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h1", null, "UNBARRELD"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "sub-text"
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", null, "D R I N K")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "welcome-text"
@@ -632,7 +636,10 @@ function (_React$Component) {
           className: "login-form-box"
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "unbarreld"
-        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h1", null, "UNBARRELD")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Link"], {
+          className: "unbarreld",
+          to: '/'
+        }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h1", null, "UNBARRELD"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "sub-text"
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", null, "D R I N K")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "welcome-text"
@@ -641,7 +648,7 @@ function (_React$Component) {
         }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
           className: "demo-user-button",
           type: "button",
-          value: "Demo User",
+          value: "Connect with DEMOBOOK",
           onClick: this.demoLogin
         })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
           className: "or"

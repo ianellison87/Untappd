@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class SessionForm extends React.Component {
     return (
       <div className="create-account-container" >
           <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div className="unbarreld"><h1>UNBARRELD</h1></div>
+          <div className="unbarreld" ><Link className="unbarreld" to={'/'}><h1>UNBARRELD</h1></Link></div>
           <div className="sub-text"><p>D R I N K</p></div>
           {/* <div>
             <a href=""></a>
@@ -146,7 +147,7 @@ class SessionForm extends React.Component {
         return (
           <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
-              <div className="unbarreld"><h1>UNBARRELD</h1></div>
+              <div className="unbarreld"><Link className="unbarreld" to={'/'}><h1>UNBARRELD</h1></Link></div>
               <div className="sub-text"><p>D R I N K</p></div>
               {/* <div>
                 <img className="logo" src="https://untappd.akamaized.net/assets/v3/images/untappd-login-logo@2x.png" />
@@ -163,7 +164,7 @@ class SessionForm extends React.Component {
             <br/>
             <br/>
               <div>
-                <input className="demo-user-button" type="button" value="Demo User" onClick={this.demoLogin}/>
+                <input className="demo-user-button" type="button" value="Connect with DEMOBOOK" onClick={this.demoLogin}/>
               </div>
             <br/>
               
