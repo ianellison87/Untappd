@@ -14,7 +14,7 @@
  *= require_self
  */
 @import './reset.css';
-@import './components/signup.css';
-@import './components/signin.css';
-@import './components/splash.css';
+@import './components/signup.scss';
+@import './components/signin.scss';
+@import './components/splash.scss';
 @import './components/greeting.css'
