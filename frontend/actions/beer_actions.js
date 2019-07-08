@@ -1,4 +1,4 @@
-import APIUtil from '../util/beers_api_util';
+import * as APIUtil from '../util/beers_api_util';
 
 export const RECEIVE_ALL_BEERS = 'RECEIVE_ALL_BEERS';
 export const RECEIVE_SINGLE_BEER = 'RECEIVE_SINGLE_BEER';
@@ -13,7 +13,7 @@ export const requestAllBeers = () => dispatch => {
 
 export const requestSingleBeer = (id) => dispatch => {
   return APIUtil.fetchSingleBeer(id)
-    .then(beer => dispatch(receiveSingleBeer(beer)))
+    .then(payload => dispatch(receiveSingleBeer(payload)))
 };
 
 export const createBeer = beer => dispatch => {

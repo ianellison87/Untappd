@@ -16,4 +16,13 @@ ActiveRecord::Base.transaction do
   }
 
   User.create!(demo_user)
+
+  beers = Beer.create(
+    [{
+      name: 'Fosters',
+      abv: 4.0,
+      ibu: 12.0
+    }]
+  )
 end
+
