@@ -579,7 +579,22 @@ function (_Component) {
         className: "beers-index"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("header", {
         className: "inner"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "this is a header... where is my header")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "header-inner"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "header-left"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", {
+        className: "logo-title"
+      }, "UNBARRELD"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        className: "logo-text"
+      }, "DRINK  RESPONSIBLY")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "header-right"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
+        className: "header-btn",
+        onClick: logout
+      }, "Log Out")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "beers-index-page"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-list-title"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
         className: "beer-list"
@@ -587,12 +602,14 @@ function (_Component) {
         to: "beers/new",
         className: "new-beer-btn",
         context: true
-      }, "Add New Beer")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", null, beers.map(function (beer) {
+      }, "Add New Beer")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "content-box"
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", null, beers.map(function (beer) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_beers_index_item__WEBPACK_IMPORTED_MODULE_7__["default"], {
           key: beer.id,
           beer: beer
         });
-      })));
+      })))));
     }
   }]);
 
