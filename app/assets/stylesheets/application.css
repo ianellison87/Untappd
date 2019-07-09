@@ -13,8 +13,3 @@
  *= require_tree .
  *= require_self
  */
-@import './reset.css';
-@import './components/user/signup.scss';
-@import './components/user/signin.scss';
-@import './components/splash.scss';
-@import './components/user/greeting.css';
