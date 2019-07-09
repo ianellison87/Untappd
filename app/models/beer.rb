@@ -13,8 +13,10 @@
 
 class Beer < ApplicationRecord
   validates :name, :abv, :ibu, :brewed_by, presence: true
-  #there is a typo in IBU in your table
+ 
   has_many :reviews
+
+  has_one_attached :photo
 
   # Active Storage Association
   # has_one_attached :photo

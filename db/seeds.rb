@@ -19,10 +19,11 @@ ActiveRecord::Base.transaction do
 
   beers = Beer.create(
     [{
-      name: 'Fosters',
+      name: "Foster's Lager",
       abv: 4.0,
       ibu: 12.0,
       brewed_by: "Australians"
+      
     },
     {
       name: 'All Day IPA',
@@ -30,9 +31,122 @@ ActiveRecord::Base.transaction do
       ibu: 30.0,
       brewed_by: "Founders"
     },
+    {
+      name: 'Torpedo Extra Ipa',
+      abv: 7.2,
+      ibu: 65.0,
+      brewed_by: "Sierra Nevada Brewing Co."
+    },
+    {
+      name: '#9',
+      abv: 5.1,
+      ibu: 20.0,
+      brewed_by: "Magic Hat Brewing Company"
+    },
+    {
+      name: 'Genesee Bock Beer',
+      abv: 5.2,
+      ibu: 0.0,
+      brewed_by: "Genesee Brewing Company"
+    },
+    {
+      name: 'Summer Shandy',
+      abv: 4.2,
+      ibu: 14.0,
+      brewed_by: "Jacob Leinenkugel Brewing Company"
+    },
+    {
+      name: 'Pabst Blue Ribbon',
+      abv: 4.6,
+      ibu: 10.0,
+      brewed_by: "Pabst Brewing Company"
+    },
+    {
+      name: 'White',
+      abv: 5.2,
+      ibu: 13.0,
+      brewed_by: "Allagash Brewing Company"
+    },
+    {
+      name: 'Anchor Steam Beer',
+      abv: 4.8,
+      ibu: 35.0,
+      brewed_by: "Anchor Brewing Company"
+    },
+    {
+      name: 'Bourbonic Plague',
+      abv: 12.0,
+      ibu: 0.0,
+      brewed_by: "Cascade Brewing"
+    },
+    {
+      name: 'Goose IPA',
+      abv: 5.9,
+      ibu: 55.0,
+      brewed_by: "Goose Island Beer Co."
+    },
+    {
+      name: 'Two Hearted Ale',
+      abv: 7.0,
+      ibu: 0.0,
+      brewed_by: "Bell's Brewery"
+    },
+    {
+      name: 'Breakfast Stout',
+      abv: 8.3,
+      ibu: 60.0,
+      brewed_by: "Founders Brewing Co."
+    },
+    {
+      name: 'Guinness Draught',
+      abv: 4.2,
+      ibu: 45.0,
+      brewed_by: "Guinness"
+    },
+    {
+      name: 'Corona Extra',
+      abv: 4.5,
+      ibu: 19.0,
+      brewed_by: "Corona Extra"
+    },
+    {
+      name: 'CB Caged Alpha Monkey IPA',
+      abv: 6.5,
+      ibu: 65.0,
+      brewed_by: "CB Craft Brewers"
+    },
+    {
+      name: 'CB Makumba Double IPA',
+      abv: 9.5,
+      ibu: 78.0,
+      brewed_by: "CB Craft Brewers"
+    },
+    {
+      name: 'Sculpin',
+      abv: 7.0,
+      ibu: 70.0,
+      brewed_by: "Ballast Point Brewing Company"
+    },
+    {
+      name: 'Citradelic: Tangerine IPA',
+      abv: 6.0,
+      ibu: 50.0,
+      brewed_by: "New Belgium Brewing Company"
+    },
+    {
+      name: 'Modelo Especial',
+      abv: 4.5,
+      ibu: 18.0,
+      brewed_by: "Grupo Modelo"
+    },
   ]
   )
 
+  Beer.all.each_with_index do |beer, idx|
+    file = EzDownload.open("https://unberreld-seed.s3-us-west-1.amazonaws.com/beer_logos/beer_logos/0#{idx+1}-beer.jpg")
+    beer.photo.attach(io: file, filename: "0#{idx+1}-beer.jpg")
+    beer.save!
+  end
   
 end
 

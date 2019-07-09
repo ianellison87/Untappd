@@ -28,6 +28,9 @@ class BeersIndex extends Component {
             </div>
           </div>
         </header>
+        <div className="top-background">
+          
+        </div>
         {/* <Route exact path="/beers/new" component={BeerFormContainer}/>  */}
         {/* <Route exact path="/beers/:beerId" component={BeerShowContainer}/>  */}
         <div className="beers-index-page">

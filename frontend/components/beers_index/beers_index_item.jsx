@@ -5,6 +5,7 @@ const BeersIndexItem = ({ beer }) => (
 
   <div className="beers-index-item">
     <div className="beer-name">
+      <img className="beer-logo" src={beer.photoUrl} alt=""/>
       <Link to={`/beers/${beer.id}`}>
         <span className="beer">{beer.name}</span>
       </Link>

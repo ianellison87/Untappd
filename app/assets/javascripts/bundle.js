@@ -593,6 +593,8 @@ function (_Component) {
         className: "header-btn",
         onClick: logout
       }, "Log Out")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "top-background"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-index-page"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-list-title"
@@ -677,7 +679,11 @@ var BeersIndexItem = function BeersIndexItem(_ref) {
     className: "beers-index-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "beer-name"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "beer-logo",
+    src: beer.photoUrl,
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/beers/".concat(beer.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "beer"
@@ -31372,7 +31378,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
