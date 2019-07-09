@@ -12,9 +12,8 @@
 #
 
 class Beer < ApplicationRecord
-  validates :name, :abv, :ibu, presence: true
+  validates :name, :abv, :ibu, :brewed_by, presence: true
   #there is a typo in IBU in your table
-  has_one :brewery
   has_many :reviews
 
   # Active Storage Association

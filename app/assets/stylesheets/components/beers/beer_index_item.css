@@ -1,0 +1,126 @@
+.beers-index-item {
+    background: white;
+    width: 600px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+    padding: 15px;
+    padding-bottom: 50px;
+}
+
+.beer-details {
+  /* display: flex;
+  justify-content: space-between; */
+  display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.beer-name {
+  padding: 16px;
+}
+
+.beer {
+  color:#d68239;
+}
+
+.beer:hover {
+  color:#ffcb00;
+}
+
+.beer-name a {
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.beer-details li {
+  /* border: 1px solid grey;
+  margin: auto;
+  width: 13%; */
+
+
+  display: inline-block;
+  vertical-align: top;
+  padding: 12px 0;
+  color: #999;
+  text-align: center;
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ibu {
+  width: 13%;
+  border-left: none;
+  border-right: 1px solid grey;
+}
+
+.abv {
+  width: 13%;
+  border-right: 1px solid grey;
+}
+
+.brewer {
+  width: 50%;
+  border-right: 1px solid grey;
+}
+
+.rating {
+  width: 24%;
+  border-right: none;
+}
+
+.beers-list-title {
+  background: white;
+  width: 600px;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  border-bottom: 1px solid grey;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.new-beer-btn {
+  text-decoration: none;
+  background-color: #ffcb00;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.new-beer-btn:hover {
+  cursor: pointer;
+  background-color: #f3c200;
+}
+
+.beer-list {
+  font-weight: 600px;
+  font-size: 28px;
+}
+
+header .inner {
+  max-width: 1048px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  height: 52px;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: #ffcb00;
+}

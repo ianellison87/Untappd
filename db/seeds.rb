@@ -21,8 +21,18 @@ ActiveRecord::Base.transaction do
     [{
       name: 'Fosters',
       abv: 4.0,
-      ibu: 12.0
-    }]
+      ibu: 12.0,
+      brewed_by: "Australians"
+    },
+    {
+      name: 'All Day IPA',
+      abv: 4.6,
+      ibu: 30.0,
+      brewed_by: "Founders"
+    },
+  ]
   )
+
+  
 end
 

@@ -12,6 +12,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 import BeersIndexContainer from '../components/beers_index/beers_index_container';
+import BeersFormContainer from '../components/beers_index/beer_form_container';
 
 const App = () => (
   <div>
@@ -23,6 +24,7 @@ const App = () => (
     </header>
     <Switch>
       <ProtectedRoute exact path="/home" component={BeersIndexContainer}/>
+      <ProtectedRoute exact path="/beers/new" component={BeersFormContainer}/>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute path="/" component={Splash} /> 

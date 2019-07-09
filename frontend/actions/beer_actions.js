@@ -19,7 +19,7 @@ export const requestSingleBeer = (id) => dispatch => {
 export const createBeer = beer => dispatch => {
   return APIUtil.createBeer(beer)
     .then(beer => {dispatch(receiveSingleBeer(beer));
-    return pokemon;
+    return beer;
   }).fail(err => dispatch(receiveBeerErrors(err.responseJSON)))
 };
 
