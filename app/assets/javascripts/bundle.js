@@ -141,7 +141,7 @@ var createBeer = function createBeer(beer) {
 };
 var deleteBeer = function deleteBeer(beer) {
   return function (dispatch) {
-    return _util_beers_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteBeer"](beer).then(function (beer) {
+    return _util_beers_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyBeer"](beer).then(function (beer) {
       return dispatch(removeBeer(beer));
     });
   };

@@ -24,7 +24,7 @@ export const createBeer = beer => dispatch => {
 };
 
 export const deleteBeer = beer => dispatch => {
-  return APIUtil.deleteBeer(beer)
+  return APIUtil.destroyBeer(beer)
     .then(beer => dispatch(removeBeer(beer)))
 }
 
