@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import BeersIndexItem from './beers_index_item';
 import BeerFormContainer from './beer_form_container';
 import BeerShowContainer from '../beer_show/beer_show_container'
+import HeaderContainer from '../header/header_container';
 
 class BeersIndex extends Component {
   componentDidMount(){
@@ -17,20 +18,20 @@ class BeersIndex extends Component {
 
     return(
       <div className="beers-index">
-        <header className="inner">
-          <div className="header-inner">  
-            <div className="header-left">
-              <h2 className="logo-title">UNBARRELD</h2>
-                <p className="logo-text">DRINK  RESPONSIBLY</p>
-            </div>
-            <div className="header-right">
-              <button className="header-btn" onClick={logout}>Log Out</button>
-            </div>
-          </div>
-        </header>
+      {/* //   <header className="inner">
+      //     <div className="header-inner">  
+      //       <div className="header-left">
+      //         <h2 className="logo-title">UNBARRELD</h2>
+      //           <p className="logo-text">DRINK  RESPONSIBLY</p>
+      //       </div>
+      //       <div className="header-right">
+      //         <button className="header-btn" onClick={logout}>Log Out</button>
+      //       </div>
+      //     </div>
+      //   </header> */}
+      <HeaderContainer />
         <div className="top-background">
-          
-        </div>
+      // </div>
         {/* <Route exact path="/beers/new" component={BeerFormContainer}/>  */}
         {/* <Route exact path="/beers/:beerId" component={BeerShowContainer}/>  */}
         <div className="beers-index-page">

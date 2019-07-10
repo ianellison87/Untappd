@@ -543,6 +543,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _beers_index_item__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./beers_index_item */ "./frontend/components/beers_index/beers_index_item.jsx");
 /* harmony import */ var _beer_form_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./beer_form_container */ "./frontend/components/beers_index/beer_form_container.js");
 /* harmony import */ var _beer_show_beer_show_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../beer_show/beer_show_container */ "./frontend/components/beer_show/beer_show_container.js");
+/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
+
 
 
 
@@ -577,24 +579,9 @@ function (_Component) {
       var beers = this.props.beers;
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-index"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("header", {
-        className: "inner"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "header-inner"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "header-left"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", {
-        className: "logo-title"
-      }, "UNBARRELD"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
-        className: "logo-text"
-      }, "DRINK  RESPONSIBLY")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "header-right"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
-        className: "header-btn",
-        onClick: logout
-      }, "Log Out")))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "top-background"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, "// "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-index-page"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-list-title"
@@ -797,6 +784,84 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_greeting__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/header/header.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/header/header.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var Header = function Header(_ref) {
+  var currentUser = _ref.currentUser,
+      logout = _ref.logout;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-left"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "logo-title"
+  }, "UNBARRELD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "logo-text"
+  }, "DRINK  RESPONSIBLY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "header-btn",
+    onClick: logout
+  }, "Log Out")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./frontend/components/header/header_container.js":
+/*!********************************************************!*\
+  !*** ./frontend/components/header/header_container.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./frontend/components/header/header.jsx");
+
+
+
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var session = _ref.session,
+      users = _ref.entities.users;
+  return {
+    currentUser: users[session.id]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["logout"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_header__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -31378,7 +31443,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
