@@ -13,7 +13,7 @@ const Header = ({ currentUser, logout }) => {
             <p className="logo-text">DRINK  RESPONSIBLY</p>
           </div>
           <div className="header-right">
-            <button className="header-btn" onClick={logout}>Log Out</button>
+            <button className="header-btn" onClick={logout}><span className="button-text">LOG OUT</span></button>
           </div>
         </div>
       </header>

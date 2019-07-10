@@ -1,3 +1,47 @@
-.beers-index {
+.form-page {
   background-color: #f5f2e8;
+  height: 100vw;
+}
+
+.beer-form-container {
+  margin: auto;
+  background: white;
+  width: 700px;
+  text-align: center;
+  max-width: 100%;
+  margin-top: 127px;
+  display: flex;
+  flex-direction: space-around;
+  height: 425px;
+}
+
+.beer-form input {
+  width: 400px;
+  height: 30px;
+  padding: 10px;
+  margin: 15px;
+  box-shadow: 2px 2px;
+  text-align: center;
+  font-weight: bold;
+  font-family: ProximaNova, Helvetica, sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+form.beer-form {
+  box-shadow: 1px, 1px;
+}
+
+input.create-btn {
+  text-decoration: none;
+  background-color: #ffcb00;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  height: 54px;
+}
+
+.create-btn:hover {
+  cursor: pointer;
+  background-color: #f3c200;
 }

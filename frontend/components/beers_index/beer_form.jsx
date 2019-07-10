@@ -2,6 +2,7 @@ import React from 'react';
 
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import HeaderContainer from '../header/header_container';
 
 class BeerForm extends React.Component {
   constructor(props){
@@ -10,15 +11,38 @@ class BeerForm extends React.Component {
       name: '',
       abv: '',
       ibu: '',
-      brewed_by: ''
+      brewed_by: '',
+      photoFile: null
     };
+    this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createBeer(this.state)
+    const formData = new FormData();
+    formData.append('beer[name]', this.state.name);
+    formData.append('beer[ibu]', this.state.ibu);
+    formData.append('beer[abv]', this.state.abv);
+    formData.append('beer[brewed_by', this.state.brewed_by)
+    if (this.state.photoFile) {
+
+      formData.append('beer[photo]', this.state.photoFile);
+    }
+    this.props.createBeer(formData)
       .then(data => this.props.history.push(`beers/${data.beer.id}`));
+  }
+
+  handleFile(e){
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+
+      this.setState({photoFile: file, photoUrl: fileReader.result});
+    };
+    if (file) {
+    fileReader.readAsDataURL(file);
+    }
   }
 
   update(property){
@@ -36,39 +60,52 @@ class BeerForm extends React.Component {
   // }
 
   render() {
+   
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
-    <div>
+    <div className="form-page">
+      <HeaderContainer />
+      <div className="top-background"></div>
       <ul>
         {/* {this.errors()} */}
       </ul>
-      <form className="beer-form" onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          value={this.state.name}
-          placeholder="Name"
-          onChange={this.update('name')}
-        />
-        <input
-          type="float"
-          value={this.state.ibu}
-          placeholder="IBU"
-          onChange={this.update('ibu')}
-        />
-        <input
-          type="float"
-          value={this.state.abv}
-          placeholder="ABV"
-          onChange={this.update('abv')}
-        />
-        <input
-          type="text"
-          value={this.state.brewed_by}
-          placeholder="Brewed By"
-          onChange={this.update('brewed_by')}
-        />
-        <input type="submit" value="Create Beer" />
+      <div className="beer-form-container">
+        <form className="beer-form" onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.name}
+            placeholder="Beer Name"
+            onChange={this.update('name')}
+          />
+          <input
+            type="float"
+            value={this.state.ibu}
+            placeholder="IBU"
+            onChange={this.update('ibu')}
+          />
+          <input
+            type="float"
+            value={this.state.abv}
+            placeholder="ABV"
+            onChange={this.update('abv')}
+          />
+          <input
+            type="text"
+            value={this.state.brewed_by}
+            placeholder="Brewed By"
+            onChange={this.update('brewed_by')}
+          />
+          <input 
+            type="file"
+            placeholder="Beer Logo"
+            onChange={this.handleFile}
+          />
+          <h5>Image Preview</h5>
+          {preview}
+          <input className="create-btn" type="submit" value="Create Beer" />
 
-      </form>  
+        </form>
+      </div>  
     </div>  
     );
   }

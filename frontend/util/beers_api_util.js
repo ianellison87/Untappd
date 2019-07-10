@@ -21,7 +21,18 @@ export const createBeer = (beer) => {
     $.ajax({
       method: 'POST',
       url: 'api/beers',
-      data: { beer }
+      data:  beer ,
+      contentType: false,
+      processData: false
+    })
+  )
+}
+
+export const destroyBeer = beer => {
+  return (
+    $.ajax({
+      method: 'DELETE',
+      url: `api/beers/${beer.id}`
     })
   )
 }

@@ -9,6 +9,7 @@ class Api::BeersController < ApplicationController
 
   def create
     @beer = Beer.create!(beer_params)
+    debugger
     render :show
   end
 
@@ -22,7 +23,7 @@ class Api::BeersController < ApplicationController
   private
 
   def beer_params
-    params.require(:beer).permit(:name, :abv, :ibu, :brewed_by)
+    params.require(:beer).permit(:name, :abv, :ibu, :brewed_by, :photo)
   end
 end
 

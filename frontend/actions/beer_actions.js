@@ -23,6 +23,11 @@ export const createBeer = beer => dispatch => {
   }).fail(err => dispatch(receiveBeerErrors(err.responseJSON)))
 };
 
+export const deleteBeer = beer => dispatch => {
+  return APIUtil.deleteBeer(beer)
+    .then(beer => dispatch(removeBeer(beer)))
+}
+
 export const receiveAllBeers = beers => ({
   type: RECEIVE_ALL_BEERS,
   beers
@@ -36,4 +41,9 @@ export const receiveSingleBeer = payload => ({
 export const receiveBeerErrors = errors => ({
   type: CREATE_BEER,
   errors
+})
+
+export const removeBeer = beer => ({
+  type: REEMOVE_BEER,
+  beer
 })

@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import BeersIndexContainer from '../components/beers_index/beers_index_container';
 import BeersFormContainer from '../components/beers_index/beer_form_container';
+import BeersShowContainer from '../components/beer_show/beer_show_container';
 
 const App = () => (
   <div>
@@ -25,6 +26,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute exact path="/home" component={BeersIndexContainer}/>
       <ProtectedRoute exact path="/beers/new" component={BeersFormContainer}/>
+      <ProtectedRoute exact path="/beers/:beerId" component={BeersShowContainer}/>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute path="/" component={Splash} /> 

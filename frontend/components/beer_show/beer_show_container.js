@@ -6,8 +6,8 @@ import BeerShow from './beer_show';
 
 const mapStateToProps = (state, { match }) => {
   const beerId = parseInt(match.params.beerId);
-  const bench = selectBeer(state.entities, beerId);
-  // const reviews = selectReviewsForBench(state.entities, beer);
+  const beer = selectBeer(state.entities, beerId);
+  // const reviews = selectReviewsForBeer(state.entities, beer);
   return {
     beerId,
     beer,

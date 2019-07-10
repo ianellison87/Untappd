@@ -50,7 +50,6 @@
 }
 
 .inputs {
-  padding: 2px 0px 0px 12px;
   margin: 10px;
 }
 
@@ -101,11 +100,12 @@
 
 .login-input {
   text-indent: 24px;
-  height: 24px;
+  height: 30px;
   border-radius: 5px;
   outline: none;
-  width: 200px;
+  width: 300px;
   font-size: 15px;
+  margin-right: 10px;
 }
 .welcome-text {
   font-family: ProximaNova, Helvetica, sans-serif;
