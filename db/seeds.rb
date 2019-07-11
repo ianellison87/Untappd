@@ -146,7 +146,6 @@ ActiveRecord::Base.transaction do
   beers.each_with_index do |beer, idx|
     file = EzDownload.open("https://unberreld-seed.s3-us-west-1.amazonaws.com/beer_logos/0#{idx+1}-beer.jpg")
     beer.photo.attach(io: file, filename: "0#{idx+1}-beer.jpg")
-    beer.save!
   end
   
 end
