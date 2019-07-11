@@ -5,8 +5,8 @@
 #  id         :bigint           not null, primary key
 #  name       :string           not null
 #  abv        :float            not null
-#  ibv        :float            not null
-#  brewery_id :integer          not null
+#  ibu        :float            not null
+#  brewed_by  :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

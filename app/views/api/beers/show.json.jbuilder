@@ -7,4 +7,5 @@ json.beer do
       json.photoUrl ""
     end
   end
-# end
+# json.review do
+#   json.set! beer.review.id

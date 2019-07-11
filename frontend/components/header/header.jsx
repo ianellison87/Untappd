@@ -12,6 +12,9 @@ const Header = ({ currentUser, logout }) => {
             <h2 className="logo-title">UNBARRELD</h2>
             <p className="logo-text">DRINK  RESPONSIBLY</p>
           </div>
+          <div className="header-link">
+            <Link className="header-link-text" to='/home'>BEERS</Link>
+          </div>
           <div className="header-right">
             <button className="header-btn" onClick={logout}><span className="button-text">LOG OUT</span></button>
           </div>

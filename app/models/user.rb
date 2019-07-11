@@ -21,6 +21,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   # has_many / belongs too references
+  #reviews through author
   has_many :reviews
 
   def self.find_by_credentials(username, password)

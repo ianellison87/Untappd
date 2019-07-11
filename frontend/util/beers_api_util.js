@@ -5,7 +5,7 @@ export const fetchAllBeers = () => {
       url: 'api/beers'
     })
   )
-}
+};
 
 export const fetchSingleBeer = id => {
   return (
@@ -14,7 +14,7 @@ export const fetchSingleBeer = id => {
       url: `api/beers/${id}`
     })
   )
-}
+};
 
 export const createBeer = (beer) => {
   return (
@@ -26,13 +26,21 @@ export const createBeer = (beer) => {
       processData: false
     })
   )
-}
+};
 
-export const destroyBeer = beer => {
+export const destroyBeer = id => {
   return (
     $.ajax({
       method: 'DELETE',
-      url: `api/beers/${beer.id}`
+      url: `api/beers/${id}`
     })
   )
-}
+};
+
+export const createReview = review => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/reviews',
+    data: { review }
+  })
+);

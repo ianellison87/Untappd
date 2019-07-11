@@ -2,9 +2,10 @@ import * as APIUtil from '../util/beers_api_util';
 
 export const RECEIVE_ALL_BEERS = 'RECEIVE_ALL_BEERS';
 export const RECEIVE_SINGLE_BEER = 'RECEIVE_SINGLE_BEER';
-export const REEMOVE_BEER = 'REMOVE__BEER';
+export const REMOVE_BEER = 'REMOVE__BEER';
 export const CREATE_BEER = 'CREATE_BEER';
 export const RECEIVE_BEERS_ERRORS = 'RECEIVE_BEERS_ERRORS';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 
 export const requestAllBeers = () => dispatch => {
   return APIUtil.fetchAllBeers()
@@ -23,9 +24,9 @@ export const createBeer = beer => dispatch => {
   }).fail(err => dispatch(receiveBeerErrors(err.responseJSON)))
 };
 
-export const deleteBeer = beer => dispatch => {
+export const deleteBeer = (beer) => dispatch => {
   return APIUtil.destroyBeer(beer)
-    .then(beer => dispatch(removeBeer(beer)))
+    .then(beer => dispatch(removeBeer(beer)));
 }
 
 export const receiveAllBeers = beers => ({
@@ -33,6 +34,20 @@ export const receiveAllBeers = beers => ({
   beers
 });
 
+
+export const createReview = review => dispatch => (
+  APIUtil.createReview(review).then(review => (
+    dispatch(receiveReview(review))
+  ))
+);
+    
+export const receiveReview = ({ review, average_rating, author }) => ({
+  type: RECEIVE_REVIEW,
+  review,
+  average_rating,
+  author,
+});
+    
 export const receiveSingleBeer = payload => ({
   type: RECEIVE_SINGLE_BEER,
   payload
@@ -44,6 +59,6 @@ export const receiveBeerErrors = errors => ({
 })
 
 export const removeBeer = beer => ({
-  type: REEMOVE_BEER,
+  type: REMOVE_BEER,
   beer
 })
