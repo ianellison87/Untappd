@@ -18,13 +18,41 @@ ActiveRecord::Base.transaction do
 
   User.create!(demo_user)
 
+  users = User.create(
+    [{
+      username: 'bobby632',
+      password: 'password',
+      email: 'bobby356@gmail.com'
+    },
+    {
+      username: 'someguy3',
+      password: 'password',
+      email: 'justadude@gmail.com'
+    },
+    {
+      username: 'andyMinucos',
+      password: 'password',
+      email: 'ilovefosters@gmail.com'
+    },
+    {
+      username: 'beerGuRu',
+      password: 'password',
+      email: 'brews@gmail.com'
+    },
+    {
+      username: 'mclovin',
+      password: 'password',
+      email: 'whateverdude56@gmail.com'
+    },
+  ]
+  )
+
   beers = Beer.create(
     [{
       name: "Foster's Lager",
       abv: 4.0,
       ibu: 12.0,
       brewed_by: "Australians"
-      
     },
     {
       name: 'All Day IPA',
@@ -147,20 +175,56 @@ ActiveRecord::Base.transaction do
     [{
       body: "Best beer I have ever tasted",
       rating: 4,
-      author_id: 1,
+      author_id: 2,
       beer_id: 1,
     },
     {
       body: "Too strong for my taste, I prefer a nice Natty Ice",
       rating: 2,
-      author_id: 2,
+      author_id: 6,
       beer_id: 9,
     },
     {
       body: "Best beer I have ever tasted",
       rating: 5,
-      author_id: 1,
-      beer_id: 4,
+      author_id: 5,
+      beer_id: 8,
+    },
+    {
+      body: "Unpopular Opinion: A04 was fun",
+      rating: 3.25,
+      author_id: 2,
+      beer_id: 8,
+    },
+    {
+      body: "I heard they recently added more hops!",
+      rating: 3.25,
+      author_id: 6,
+      beer_id: 5,
+    },
+    {
+      body: "I think im losing my mind",
+      rating: 3.25,
+      author_id: 5,
+      beer_id: 9,
+    },
+    {
+      body: "This is teh perfect summer beer... either that or I dont know what im talking about",
+      rating: 3.25,
+      author_id: 6,
+      beer_id: 10,
+    },
+    {
+      body: "First round is on me",
+      rating: 3.25,
+      author_id: 3,
+      beer_id: 12,
+    },
+    {
+      body: "I have to write real things in this review because its near the top",
+      rating: 3.25,
+      author_id: 2,
+      beer_id: 2,
     },
     {
       body: "Who am I and what am I doing with my life?",
@@ -169,70 +233,34 @@ ActiveRecord::Base.transaction do
       beer_id: 6,
     },
     {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
+      body: "Tastes like sadness",
+      rating: 1.25,
+      author_id: 3,
+      beer_id: 5,
+    },
+    {
+      body: "Great flavors cant wait to try more like it, this brewery is AWESOME!",
+      rating: 3.50,
+      author_id: 2,
+      beer_id: 2,
     },
     {
       body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
+      rating: 2.75,
+      author_id: 5,
+      beer_id: 3,
     },
     {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
+      body: "Wow, blown away by the subtle notes of home!",
+      rating: 5,
+      author_id: 4,
+      beer_id: 1,
     },
     {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
-    },
-    {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
-    },
-    {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
-    },
-    {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
-    },
-    {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
-    },
-    {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
-    },
-    {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
-    },
-    {
-      body: "Who am I and what am I doing with my life?",
-      rating: 3.25,
-      author_id: 1,
-      beer_id: 6,
+      body: "I can't get enough of this stuff!",
+      rating: 4.75,
+      author_id: 4,
+      beer_id: 1,
     },
   ]
   )
