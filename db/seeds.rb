@@ -149,7 +149,7 @@ ActiveRecord::Base.transaction do
       rating: 4,
       author_id: 1,
       beer_id: 1,
-      img_url: window.beer01
+      img_url: "../app/assets/images/beer01.jpeg"
     },
     {
       body: "Too strong for my taste, I prefer a nice Natty Ice",
