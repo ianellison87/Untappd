@@ -17,6 +17,8 @@ import BeersIndexContainer from '../components/beers_index/beers_index_container
 import BeersFormContainer from '../components/beers_index/beer_form_container';
 import BeersShowContainer from '../components/beer_show/beer_show_container';
 
+
+
 const App = () => (
   <div>
     <header>
