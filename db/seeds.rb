@@ -258,7 +258,7 @@ ActiveRecord::Base.transaction do
     },
     {
       body: "I can't get enough of this stuff!",
-      rating: 4.75,
+      rating: 3,
       author_id: 1,
       beer_id: 1,
     },

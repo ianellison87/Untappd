@@ -23,7 +23,7 @@ class BeerShow extends React.Component {
     this.props.deleteBeer(this.props.beerId);
     
     this.props.history.push("/home");
-    // .then(() =>window.location.reload());
+    window.location.reload();
   }
 
 
@@ -53,7 +53,7 @@ class BeerShow extends React.Component {
               </div>
               <div className="beer-stats-bottom">
                 <li className="beer-item-brewed">Brewed by: {beer.brewed_by}</li>
-                <li className="beer-item-avg">AVG Rating: {beer.average_rating}</li>
+                <li className="beer-item-avg">AVG Rating: {parseFloat(beer.average_rating).toFixed(2)}</li>
               </div>
                 <button className="delete-btn" onClick={this.handleDelete}>DELETE</button>
             </ul>

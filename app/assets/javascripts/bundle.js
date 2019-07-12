@@ -471,7 +471,8 @@ function (_React$Component) {
     value: function handleDelete(e) {
       e.preventDefault();
       this.props.deleteBeer(this.props.beerId);
-      this.props.history.push("/home"); // .then(() =>window.location.reload());
+      this.props.history.push("/home");
+      window.location.reload();
     }
   }, {
     key: "render",
@@ -511,7 +512,7 @@ function (_React$Component) {
           className: "beer-item-brewed"
         }, "Brewed by: ", beer.brewed_by), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
           className: "beer-item-avg"
-        }, "AVG Rating: ", beer.average_rating)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
+        }, "AVG Rating: ", parseFloat(beer.average_rating).toFixed(2))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
           className: "delete-btn",
           onClick: this.handleDelete
         }, "DELETE")))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -992,7 +993,7 @@ var BeersIndexItem = function BeersIndexItem(_ref) {
     className: "brewer"
   }, beer.brewed_by), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "rating"
-  }, beer.average_rating)));
+  }, parseFloat(beer.average_rating).toFixed(2))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BeersIndexItem);
@@ -1276,7 +1277,8 @@ var Header = function Header(_ref) {
     className: "header-link-text",
     to: "/home"
   }, "BEERS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "header-link-text"
+    className: "header-link-text",
+    to: "/home"
   }, "REVIEWS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-right"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -32103,7 +32105,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
