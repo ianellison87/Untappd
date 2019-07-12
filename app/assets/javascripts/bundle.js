@@ -470,11 +470,8 @@ function (_React$Component) {
     key: "handleDelete",
     value: function handleDelete(e) {
       e.preventDefault();
-      this.props.deleteBeer(this.props.beerId).then(function () {
-        return props.history.push("/home");
-      }).then(function () {
-        return window.location.reload();
-      });
+      this.props.deleteBeer(this.props.beerId);
+      this.props.history.push("/home"); // .then(() =>window.location.reload());
     }
   }, {
     key: "render",

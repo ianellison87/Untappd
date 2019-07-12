@@ -17,11 +17,13 @@ class BeerShow extends React.Component {
     this.props.requestSingleBeer(this.props.beerId);
   }
 
+
   handleDelete(e){
     e.preventDefault();
-    this.props.deleteBeer(this.props.beerId)
-    .then(()=> props.history.push("/home"))
-    .then(() =>window.location.reload());
+    this.props.deleteBeer(this.props.beerId);
+    
+    this.props.history.push("/home");
+    // .then(() =>window.location.reload());
   }
 
 
