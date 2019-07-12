@@ -21,7 +21,7 @@ class Beer < ApplicationRecord
   # Active Storage Association
   # has_one_attached :photo
 
-  def average_ration
+  def average_rating
     reviews.average(:rating)
   end
 

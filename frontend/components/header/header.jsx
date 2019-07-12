@@ -14,6 +14,7 @@ const Header = ({ currentUser, logout }) => {
           </div>
           <div className="header-link">
             <Link className="header-link-text" to='/home'>BEERS</Link>
+            <Link className="header-link-text">REVIEWS</Link>
           </div>
           <div className="header-right">
             <button className="header-btn" onClick={logout}><span className="button-text">LOG OUT</span></button>

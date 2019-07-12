@@ -6,9 +6,9 @@ const Review = ({ review, author }) => {
   return (
     <div>
       <ul>
-        <li>Rating: {rating}</li>
         <li>{body} - by {author.username}</li>
 
+        <li>Rating: {rating}</li>
       </ul>
     </div>
   );

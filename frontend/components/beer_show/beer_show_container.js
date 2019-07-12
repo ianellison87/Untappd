@@ -8,11 +8,12 @@ const mapStateToProps = (state, { match }) => {
   const beerId = parseInt(match.params.beerId);
   const beer = selectBeer(state.entities, beerId);
   // const reviews = selectReviewsForBeer(state.entities, beer);
+  
   return {
     // beerErrors: errorsReducer.session,
     beerId,
     beer,
-    // reviews
+    reviews: state.entities.reviews
   };
 };
 

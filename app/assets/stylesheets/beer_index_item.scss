@@ -41,6 +41,7 @@
 
 .beer:hover {
   color:#ffcb00;
+  cursor: pointer;
 }
 
 .beer-name a {
@@ -109,6 +110,7 @@
   color: white;
   font-weight: bold;
   padding: 10px 20px;
+  border-radius: 5px;
 }
 
 .new-beer-btn:hover {

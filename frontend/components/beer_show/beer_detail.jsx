@@ -1,37 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { deleteBeer} from '../../actions/beer_actions'
-// import ReviewListItemContainer from './review_list_item_container';
+import ReviewListItemContainer from './review_list_item_container';
 
-// const reviewList = ({reviews}) => {
-//   // debugger
-//   return (
-//   reviews.map(review => (
-//     <ReviewListItemContainer
-//       review={review}
-//       key={review.id}
-//     />
-//   ))
-//   )};
+const reviewList = (reviews) => {
+  return (
+  reviews.map(review => (
+    <div className="single-comment">
+    
+      <ReviewListItemContainer
+        review={review}
+        key={review.id}
+      />
+    </div >
+
+  ))
+)};
 
 
 const BeerDetail = ({ beer, reviews }) => {
   return (
-    <div>
-      <ul className="beer-item">
-        <li>{beer.photoUrl}</li>
+    // <div>
+      /* <ul className="beer-item">
+        <li><img className="beer-logo" src={beer.photoUrl} alt="" /></li>
         <li>{beer.name}</li>
         <li>{beer.ibu}</li>
         <li>{beer.abv}</li>
         <li>{beer.brewed_by}</li>
         <li>* * * * *</li>
-        <input type="submit" onClick={() => deleteBeer(beer.id)} value="DETELE"/>
-      </ul>
+        {/* <input type="submit" onClick={() => deleteBeer(beer.id)} value="DELETE"/> */
+      // </ul> */}
       <div className="reviews">
-        <h3>Reviews</h3>
-        {/* {reviewList(reviews)} */}
+          {reviewList(reviews)}
       </div>
-    </div>
+    /* {reviews && reviews.map(review => <li>{review.body}</li>)} */
+    // </div>
   )
 }
 

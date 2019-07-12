@@ -30,7 +30,7 @@ ActiveRecord::Base.transaction do
       name: 'All Day IPA',
       abv: 4.6,
       ibu: 30.0,
-      brewed_by: "Founders"
+      brewed_by: "Founders Brewing Co."
     },
     {
       name: 'Torpedo Extra Ipa',
@@ -139,6 +139,34 @@ ActiveRecord::Base.transaction do
       abv: 4.5,
       ibu: 18.0,
       brewed_by: "Grupo Modelo"
+    },
+  ]
+  )
+
+  reviews = Review.create(
+    [{
+      body: "Best beer I have ever tasted",
+      rating: 4,
+      author_id: 1,
+      beer_id: 1
+    },
+    {
+      body: "Reminds me of my father ",
+      rating: 2,
+      author_id: 1,
+      beer_id: 1
+    },
+    {
+      body: "Best beer I have ever tasted",
+      rating: 5,
+      author_id: 1,
+      beer_id: 4
+    },
+    {
+      body: "Who am I and what am I doing with my life?",
+      rating: 3.25,
+      author_id: 1,
+      beer_id: 6
     },
   ]
   )

@@ -1,0 +1,126 @@
+.beer-show-page {
+  background-color: #f5f2e8;
+  height: 1600px;
+}
+
+.beer-show-item-box {
+  background: white;
+  width: 1000px;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 150%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid grey;
+  padding: 15px;
+  padding-bottom: 50px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  margin-top: 30px; 
+}
+
+.comments {
+
+}
+
+.delete-btn {
+  text-decoration: none;
+  background-color: #ffcb00;
+  color: white;
+  font-weight: bold;
+  height: 30px;
+  width: 120px;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.delete-btn:hover {
+  background-color: #f3c200;
+  cursor: pointer;
+}
+
+.single-comment {
+  background: white;
+  width: 700px;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 150%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid grey;
+  padding: 15px;
+  padding-bottom: 50px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  margin-top: 10px; 
+  border-radius: 5px;  
+}
+
+.beer-item {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.beer-item-avg {
+  padding: 10px;
+  font-size: 20px;
+  color: grey;
+  width: 50%;
+  border-top: .5px solid grey;
+  border-left: .5px solid grey;
+}
+.beer-item-ibu {
+  padding: 10px;
+  font-size: 20px;
+  color: grey;
+  width: 50%;
+  border-bottom: .5px solid grey;
+  border-right: .5px solid grey;
+}
+.beer-item-abv {
+  padding: 10px;
+  font-size: 20px;
+  color: grey;
+  width: 50%;
+  border-left: .5px solid grey;
+  border-bottom: .5px solid grey;
+}
+.beer-item-brewed {
+  padding: 10px;
+  font-size: 20px;
+  color: grey;
+  width: 50%;
+  border-top: .5px solid grey;
+  border-right: .5px solid grey;
+}
+
+.beer-stats-top {
+  display: flex;
+  
+}
+.beer-stats-bottom {
+  display: flex;
+
+}
+
+.beer-logo-show {
+  display: flex;
+  flex-direction: initial;
+  height: 200px;
+  width: 200px;
+}
+
+.beer-item-name {
+  color:#d68239;
+  font-size: 30px;
+
+}

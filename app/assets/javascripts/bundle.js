@@ -361,34 +361,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/beer_actions */ "./frontend/actions/beer_actions.js");
+/* harmony import */ var _review_list_item_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./review_list_item_container */ "./frontend/components/beer_show/review_list_item_container.jsx");
 
 
- // import ReviewListItemContainer from './review_list_item_container';
-// const reviewList = ({reviews}) => {
-//   // debugger
-//   return (
-//   reviews.map(review => (
-//     <ReviewListItemContainer
-//       review={review}
-//       key={review.id}
-//     />
-//   ))
-//   )};
+
+
+
+var reviewList = function reviewList(reviews) {
+  return reviews.map(function (review) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "single-comment"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_list_item_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      review: review,
+      key: review.id
+    }));
+  });
+};
 
 var BeerDetail = function BeerDetail(_ref) {
   var beer = _ref.beer,
       reviews = _ref.reviews;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "beer-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer.photoUrl), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer.ibu), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer.abv), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer.brewed_by), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "* * * * *"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "submit",
-    onClick: function onClick() {
-      return Object(_actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["deleteBeer"])(beer.id);
-    },
-    value: "DETELE"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "reviews"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Reviews")));
+  return (// <div>
+
+    /* <ul className="beer-item">
+      <li><img className="beer-logo" src={beer.photoUrl} alt="" /></li>
+      <li>{beer.name}</li>
+      <li>{beer.ibu}</li>
+      <li>{beer.abv}</li>
+      <li>{beer.brewed_by}</li>
+      <li>* * * * *</li>
+      {/* <input type="submit" onClick={() => deleteBeer(beer.id)} value="DELETE"/> */
+    // </ul> */}
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "reviews"
+    }, reviewList(reviews))
+    /* {reviews && reviews.map(review => <li>{review.body}</li>)} */
+    // </div>
+
+  );
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BeerDetail);
@@ -462,23 +472,57 @@ function (_React$Component) {
       e.preventDefault();
       this.props.deleteBeer(this.props.beerId).then(function () {
         return props.history.push("/home");
+      }).then(function () {
+        return window.location.reload();
       });
     }
   }, {
     key: "render",
     value: function render() {
+      // console.log(this.props.reviews)
       var beer = this.props.beer;
-      var reviews = this.state.reviewId;
+      var reviews = Object.values(this.props.reviews);
 
       if (!beer) {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", null, "Loading...");
       } else {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-          className: "beer-item-page"
-        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_beer_detail__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          className: "beer-show-page"
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+          className: "top-background"
+        }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+          className: "beer-show-item-box"
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+          className: "beer-item"
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("img", {
+          className: "beer-logo-show",
+          src: beer.photoUrl,
+          alt: ""
+        }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("ul", {
+          className: "beer-item-stats"
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h2", {
+          className: "beer-item-name"
+        }, beer.name), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+          className: "beer-stats-top"
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
+          className: "beer-item-ibu"
+        }, "IBU: ", beer.ibu), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
+          className: "beer-item-abv"
+        }, "ABV: ", beer.abv)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+          className: "beer-stats-bottom"
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
+          className: "beer-item-brewed"
+        }, "Brewed by: ", beer.brewed_by), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
+          className: "beer-item-avg"
+        }, "AVG Rating: ", beer.average_rating)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
+          className: "delete-btn",
+          onClick: this.handleDelete
+        }, "DELETE")))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+          className: "comments"
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_beer_detail__WEBPACK_IMPORTED_MODULE_10__["default"], {
           beer: beer,
-          reviews: this.state.reviewId
-        }));
+          reviews: reviews
+        })));
       }
     }
   }]);
@@ -516,8 +560,8 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
   return {
     // beerErrors: errorsReducer.session,
     beerId: beerId,
-    beer: beer // reviews
-
+    beer: beer,
+    reviews: state.entities.reviews
   };
 };
 
@@ -533,6 +577,41 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_beer_show__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/beer_show/review_list_item_container.jsx":
+/*!**********************************************************************!*\
+  !*** ./frontend/components/beer_show/review_list_item_container.jsx ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+var Review = function Review(_ref) {
+  var review = _ref.review,
+      author = _ref.author;
+  var rating = review.rating,
+      body = review.body;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, body, " - by ", author.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Rating: ", rating)));
+};
+
+var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
+  var users = _ref2.entities.users;
+  var review = _ref3.review;
+  return {
+    author: users[review.author_id]
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Review));
 
 /***/ }),
 
@@ -1078,7 +1157,7 @@ var Greeting = function Greeting(_ref) {
       logout = _ref.logout;
 
   var sessionLinks = function sessionLinks() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "splash"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       className: "login-signup"
@@ -1088,7 +1167,7 @@ var Greeting = function Greeting(_ref) {
     }, "SIGN IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       className: "nav-btn",
       to: "/signup"
-    }, "CREATE AN ACCOUNT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "CREATE AN ACCOUNT"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "splash-content"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "left-side"
@@ -1189,7 +1268,9 @@ var Header = function Header(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "header-link-text",
     to: "/home"
-  }, "BEERS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "BEERS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "header-link-text"
+  }, "REVIEWS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-right"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "header-btn",
@@ -1874,7 +1955,7 @@ var reviewsReducer = function reviewsReducer() {
 
   switch (action.type) {
     case _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_SINGLE_BEER"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.reviews);
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.payload.reviews);
 
     case _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_REVIEW"]:
       var review = action.review;
@@ -1925,14 +2006,13 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
 /*!****************************************!*\
   !*** ./frontend/reducers/selectors.js ***!
   \****************************************/
-/*! exports provided: selectAllBeers, selectBeer, selectReviewsForBeer, asArray */
+/*! exports provided: selectAllBeers, selectBeer, asArray */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectAllBeers", function() { return selectAllBeers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectBeer", function() { return selectBeer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectReviewsForBeer", function() { return selectReviewsForBeer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asArray", function() { return asArray; });
 var selectAllBeers = function selectAllBeers(state) {
   return Object.values(state.entities.beers);
@@ -1942,16 +2022,12 @@ var selectBeer = function selectBeer(_ref, beerId) {
   return beers[beerId] || {
     reviewIds: []
   };
-};
-var selectReviewsForBeer = function selectReviewsForBeer(_ref2, beer) {
-  var beers = _ref2.beers,
-      reviews = _ref2.reviews;
-  return beer.reviewIds.map(function (reviewId) {
-    return reviews[reviewId];
-  });
-};
-var asArray = function asArray(_ref3) {
-  var beers = _ref3.beers;
+}; // export const selectReviewsForBeer = ({ beers, reviews }, beer) => {
+//   return beer.reviewIds.map(reviewId => reviews[reviewId]);
+// };
+
+var asArray = function asArray(_ref2) {
+  var beers = _ref2.beers;
   return Object.keys(beers).map(function (key) {
     return beers[key];
   });

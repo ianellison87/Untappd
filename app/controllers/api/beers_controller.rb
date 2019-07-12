@@ -1,6 +1,9 @@
 class Api::BeersController < ApplicationController
   def index
-    @beers = Beer.all
+    beers = Beer.all
+
+    @beers = beers.includes(:reviews)
+    render :index
   end
 
   def show

@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
+  <div>
     <div className="splash">
       <nav className="login-signup">
         <Link className="nav-btn" to="/login">SIGN IN</Link>
         <Link className="nav-btn" to="/signup">CREATE AN ACCOUNT</Link>
       </nav>
+    </div>
       <div className="splash-content">
         <div className="left-side">
             <img className="unbarreld-logo" src="https://untappd.akamaized.net/assets/custom/homepage/images/ut-logo-bottles.svg"/>

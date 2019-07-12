@@ -15,7 +15,7 @@ class BeersIndex extends Component {
 
   render() {
     const {beers} = this.props;
-
+    
     return(
       <div className="beers-index">
 
