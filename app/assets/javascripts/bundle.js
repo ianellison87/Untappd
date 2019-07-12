@@ -599,9 +599,16 @@ var Review = function Review(_ref) {
   var rating = review.rating,
       body = review.body,
       photoUrl = review.photoUrl;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, body, " - by ", author.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p1", {
+    className: "body-text"
+  }, "\"", body, "\""), " - by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p2", {
+    className: "author"
+  }, author.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "review-photo",
     src: photoUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Rating: ", rating)));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "rating-text"
+  }, "Rating: ", rating)));
 };
 
 var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
@@ -32105,7 +32112,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -6,9 +6,9 @@ const Review = ({ review, author }) => {
   return (
     <div>
       <ul>
-        <li>{body} - by {author.username}</li>
-        <li><img src={photoUrl} /></li>
-        <li>Rating: {rating}</li>
+        <li><p1 className="body-text">"{body}"</p1> - by <p2 className="author">{author.username}</p2></li>
+        <li><img className="review-photo" src={photoUrl} /></li>
+        <li className="rating-text">Rating: {rating}</li>
       </ul>
     </div>
   );
