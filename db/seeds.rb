@@ -147,9 +147,9 @@ ActiveRecord::Base.transaction do
     [{
       body: "Best beer I have ever tasted",
       rating: 4,
-      author_id: 5,
+      author_id: 1,
       beer_id: 1,
-      img_url: "https://cdn.pixabay.com/photo/2018/05/31/16/51/glass-of-beer-3444480__340.jpg"
+      img_url: window.beer01
     },
     {
       body: "Too strong for my taste, I prefer a nice Natty Ice",
