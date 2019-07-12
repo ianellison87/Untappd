@@ -19,5 +19,6 @@ class Review < ApplicationRecord
     class_name: :User
   belongs_to :beer
 
+  has_one_attached :photo
 
 end

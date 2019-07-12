@@ -149,105 +149,90 @@ ActiveRecord::Base.transaction do
       rating: 4,
       author_id: 1,
       beer_id: 1,
-      img_url: "../app/assets/images/beer01.jpeg"
     },
     {
       body: "Too strong for my taste, I prefer a nice Natty Ice",
       rating: 2,
       author_id: 2,
       beer_id: 9,
-      img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7eJt74ds2Hx5LTczE4Zo2thZkQBb9SBK841ZAqK6d_u-SqHBj"
     },
     {
       body: "Best beer I have ever tasted",
       rating: 5,
       author_id: 1,
       beer_id: 4,
-      img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2m6p6PHgQh01nfICndLd57js05IbqQReXWfX2UpfcsrXKykRN"
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs03RXoYdUqAOHO8U-luJWFKgkVDw7MF1F7m5L2Fl8LYkunTf-"
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMiKlTVJOGnRlsAPPQ8BeMf6s3bN3M59Sdgl3ixqaNy5MtzxUB"
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 3.25,
       author_id: 1,
       beer_id: 6,
-      img_url: ""
     },
   ]
   )
@@ -257,5 +242,9 @@ ActiveRecord::Base.transaction do
     beer.photo.attach(io: file, filename: "0#{idx+1}-beer.jpg")
   end
   
+  Review.all.each_with_index do |review, idx|
+    file = EzDownload.open("https://unberreld-seed.s3-us-west-1.amazonaws.com/reviews/0#{idx+1}-photo.jpeg")
+    review.photo.attach(io: file, filename: "0#{idx+1}-photo.jpeg")
+  end
 end
 

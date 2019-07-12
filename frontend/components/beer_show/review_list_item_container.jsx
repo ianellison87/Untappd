@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Review = ({ review, author }) => {
-  const { rating, body, img_url } = review;
+  const { rating, body, photoUrl } = review;
   return (
     <div>
       <ul>
         <li>{body} - by {author.username}</li>
-        <li><img src={img_url} /></li>
+        <li><img src={photoUrl} /></li>
         <li>Rating: {rating}</li>
       </ul>
     </div>
