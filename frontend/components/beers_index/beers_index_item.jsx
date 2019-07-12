@@ -14,7 +14,7 @@ const BeersIndexItem = ({ beer }) => (
         <li className="ibu">{beer.ibu} IBU</li>
         <li className="abv">{beer.abv}% ABV</li>
         <li className="brewer">{beer.brewed_by}</li>
-        <li className="rating">Rating placeholder</li>
+        <li className="rating">{beer.average_rating}</li>
       </div>
   </div>
 )

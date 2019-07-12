@@ -599,8 +599,11 @@ var Review = function Review(_ref) {
   var review = _ref.review,
       author = _ref.author;
   var rating = review.rating,
-      body = review.body;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, body, " - by ", author.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Rating: ", rating)));
+      body = review.body,
+      img_url = review.img_url;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, body, " - by ", author.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: img_url
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Rating: ", rating)));
 };
 
 var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
@@ -770,10 +773,13 @@ function (_React$Component) {
         placeholder: "Brewed By",
         onChange: this.update('brewed_by')
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "file-btn",
         type: "file",
         placeholder: "Beer Logo",
         onChange: this.handleFile
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h5", null, "Image Preview"), preview, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "preview"
+      }, preview), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
         className: "create-btn",
         type: "submit",
         value: "Create Beer"
@@ -989,7 +995,7 @@ var BeersIndexItem = function BeersIndexItem(_ref) {
     className: "brewer"
   }, beer.brewed_by), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "rating"
-  }, "Rating placeholder")));
+  }, beer.average_rating)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BeersIndexItem);
@@ -1172,9 +1178,13 @@ var Greeting = function Greeting(_ref) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "left-side"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      className: "unbarreld-logo",
-      src: "https://untappd.akamaized.net/assets/custom/homepage/images/ut-logo-bottles.svg"
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      className: "bottles",
+      src: window.bottles
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      className: "bottles-text"
+    }, "UNBARRELD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      className: "bottles-subtext"
+    }, "Drink Responsibly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
       className: "tag-line"
     }, "Discover and share your favorite beer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "right-side"

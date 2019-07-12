@@ -14,7 +14,9 @@ const Greeting = ({ currentUser, logout }) => {
     </div>
       <div className="splash-content">
         <div className="left-side">
-            <img className="unbarreld-logo" src="https://untappd.akamaized.net/assets/custom/homepage/images/ut-logo-bottles.svg"/>
+            <img className="bottles" src={window.bottles}/>
+            <h1 className="bottles-text">UNBARRELD</h1>
+            <p className="bottles-subtext">Drink Responsibly</p>
           <h2 className="tag-line">Discover and share your favorite beer.</h2>
         </div>
         <div className="right-side">

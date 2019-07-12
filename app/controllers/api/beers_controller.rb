@@ -12,7 +12,7 @@ class Api::BeersController < ApplicationController
 
   def create
     @beer = Beer.create!(beer_params)
-    debugger
+
     render :show
   end
 
@@ -20,7 +20,8 @@ class Api::BeersController < ApplicationController
     @beer = Beer.find(params[:id])
     @beer.destroy
 
-    render :index
+    redirect_to :back
+    # render :index
   end
 
   private

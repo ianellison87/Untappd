@@ -95,13 +95,13 @@ class BeerForm extends React.Component {
             placeholder="Brewed By"
             onChange={this.update('brewed_by')}
           />
-          <input 
+          <input
+            className="file-btn" 
             type="file"
             placeholder="Beer Logo"
             onChange={this.handleFile}
           />
-          <h5>Image Preview</h5>
-          {preview}
+          <div className="preview">{preview}</ div>
           <input className="create-btn" type="submit" value="Create Beer" />
 
         </form>

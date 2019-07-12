@@ -12,7 +12,7 @@
   margin-top: 127px;
   display: flex;
   flex-direction: space-around;
-  height: 425px;
+  height: auto;
 }
 
 .beer-form input {
@@ -44,4 +44,13 @@ input.create-btn {
 .create-btn:hover {
   cursor: pointer;
   background-color: #f3c200;
+}
+
+.file-btn {
+  margin: auto;
+}
+
+.preview {
+  height: auto;
+  width: auto;
 }
