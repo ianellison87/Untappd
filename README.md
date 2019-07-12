@@ -36,49 +36,61 @@ UNBARRELD is a social beer review site modeled after UNTAPPD, users can create a
 
 ### Beers Page
 
-![Beer Show](https://github.com/ppondo/Uncorkd/blob/master/app/assets/images/brew-show.png "Beer Show")
+![Beers Show](https://github.com/ianellison87/fullstack/blob/master/app/assets/images/beers_index_screenshot.jpg "Beer Show")
 
-The Brewery Show page includes an average rating display, which renders the current rating out of five.
+The Beers Show page includes an average rating display, which renders the current rating out of five.
 This was acheived by calculating the average rating in the backend, passing that rating up when the frontend requests it, and updating the styling of the rating display when the rating changes.
 
-This page also displays the total, unique, and monthly checkins for each brewery, as well as the amount of checkins the current user has created for beverages that belong to that brewery.
+Also displayed on this page are stats for beers and an extensive list of beers that people have added over the ages.
 
-### Checkin Feed
+### Beer show
 
-![Checkin](https://github.com/ppondo/Uncorkd/blob/master/app/assets/images/checkin.png "Checkin")
+![Beer show](https://github.com/ianellison87/fullstack/blob/master/app/assets/images/beer_show_screenshot.jpg "Beer Show")
 
-Checkins display the optional rating that the user provided on review, the optional body of the review, and an image if the user chooses to include one. The images that the users include in their reviews are uploaded to and retrieved from a bucket provided by Amazon's S3 service.
+The Beer show page has a detailed view of the beer you have requested more information on. Attached to this page are all the reviews from users that pertain to this beer in particular. 
 
-The checkins also include a link to a page which displays a detailed version of a single checkin, as well as a button that removes the checkin from the app. This action updates the users stats accordingly.
-
-### Checkin Filtering
-
-When a particular page is shown (User Profile, Brewery Page, Beverage Page) a filter is included in the ajax request sent to the Checkin API which allows the controller to pass back the correct checkins for the page the user navigates to. This helps to keep the checkins slice of state lighter, particularly as the amount of checkins stored in the database grows.
 
 ```Ruby
-class Api::CheckinsController < ApplicationController
+class Api::BeersController < ApplicationController
+  def index
+    beers = Beer.all
 
-    def index
-        if params[:brewery_id]
-            @checkins = Checkin.where(brewery_id: params[:brewery_id]).
-                        includes(:beverage, :user)
-        elsif params[:beverage_id]
-            @checkins = Checkin.where(beverage_id: params[:beverage_id]).
-                        includes(:user, :brewery)
-        elsif params[:user_id]
-            @checkins = Checkin.where(user_id: params[:user_id]).
-                        includes(:beverage, :brewery)
-        else
-            @checkins = Checkin.all.includes(:beverage, :user, :brewery)
-        end
+    @beers = beers.includes(:reviews)
+    render :index
+  end
 
-        render :index
-    end
+  def show
+    @beer = Beer.find(params[:id])
+  end
+
+  def create
+    @beer = Beer.create!(beer_params)
+
+    render :show
+  end
+
+  def destroy
+    @beer = Beer.find(params[:id])
+    @beer.destroy
+
+    redirect_to :back
+    # render :index
+  end
+
+  private
+
+  def beer_params
+    params.require(:beer).permit(:name, :abv, :ibu, :brewed_by, :photo)
+  end
+end
 ```
 
 ## Upcoming Features
 
 <ul>
+    <li>Create a review and upload an image of you enjoying your beverage!</li>  
+    <li>List of Breweries that complement the list of beers. CRUD for Breweries</li>
+    <li>Checkins. You can check in what beer you are drinking at what Brewery</li>  
     <li> Search! Users will be able to search the app for particular beverages, breweries, or users. </li>
     <li> Badges! Users will receive special badges for reaching milestones (number of checkins, checking in certain styles, etc.) </li>
     <li> Friends! Users will be able to add friends to interact with on the app. </li>
