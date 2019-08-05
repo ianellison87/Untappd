@@ -16,7 +16,7 @@ import ReviewsIndexContainer from '../components/reviews_index/reviews_index_con
 import BeersIndexContainer from '../components/beers_index/beers_index_container';
 import BeersFormContainer from '../components/beers_index/beer_form_container';
 import BeersShowContainer from '../components/beer_show/beer_show_container';
-
+import UserShowContainer from '../components/user_show/user_show_container'
 
 
 const App = () => (
@@ -32,6 +32,7 @@ const App = () => (
       <ProtectedRoute exact path="/beers/new" component={BeersFormContainer}/>
       <ProtectedRoute exact path="/reviews" component={ReviewsIndexContainer}/>
       <ProtectedRoute exact path="/reviews/new" component={ReviewsFormContainer}/>
+      <ProtectedRoute exact path="/user/:userId" component={UserShowContainer}/>
       <ProtectedRoute exact path="/beers/:beerId" component={BeersShowContainer}/>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />

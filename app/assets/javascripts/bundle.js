@@ -294,6 +294,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_beers_index_beers_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/beers_index/beers_index_container */ "./frontend/components/beers_index/beers_index_container.js");
 /* harmony import */ var _components_beers_index_beer_form_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/beers_index/beer_form_container */ "./frontend/components/beers_index/beer_form_container.js");
 /* harmony import */ var _components_beer_show_beer_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/beer_show/beer_show_container */ "./frontend/components/beer_show/beer_show_container.js");
+/* harmony import */ var _components_user_show_user_show_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/user_show/user_show_container */ "./frontend/components/user_show/user_show_container.js");
+
 
 
 
@@ -326,6 +328,10 @@ var App = function App() {
     exact: true,
     path: "/reviews/new",
     component: _components_beers_index_review_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
+    exact: true,
+    path: "/user/:userId",
+    component: _components_user_show_user_show_container__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     exact: true,
     path: "/beers/:beerId",
@@ -1296,11 +1302,11 @@ var Header = function Header(_ref) {
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "dropdown-content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "arrow-up"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "header-btn"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "button-text"
-  }, "USER PROFILE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "USER PROFILE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "header-btn",
     onClick: logout
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1821,6 +1827,155 @@ var Splash = function Splash() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);
+
+/***/ }),
+
+/***/ "./frontend/components/user_show/user_show.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/user_show/user_show.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+
+
+
+ // import BeerDetail from './beer_detail';
+// import HeaderContainer from '../header/header_container';
+// import Header from '../header/header';
+// import BeerDetail from './beer_detail';
+
+var UserShow =
+/*#__PURE__*/
+function (_React$Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(UserShow, _React$Component);
+
+  function UserShow(props) {
+    var _this;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, UserShow);
+
+    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(UserShow).call(this, props));
+    _this.state = _this.props.user; // this.handleDelete = this.handleDelete.bind(this)
+
+    return _this;
+  } // componentDidMount() {
+  //   this.props.receiveCurrentUser(this.props.userId);
+  // }
+  // handleDelete(e) {
+  //   e.preventDefault();
+  //   this.props.deleteBeer(this.props.beerId);
+  //   this.props.history.push("/home");
+  //   window.location.reload();
+  // }
+
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(UserShow, [{
+    key: "render",
+    value: function render() {
+      // console.log(this.props.reviews)
+      react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "User Show"); // let beer = this.props.beer
+      // let reviews = Object.values(this.props.reviews)
+      // if (!beer) {
+      //   return <div>
+      //     Loading...
+      //   </div>
+      // } else {
+      //   return (
+      //     <div className="beer-show-page">
+      //       <HeaderContainer />
+      //       <div className="top-background"></div>
+      //       <div className="beer-show-item-box">
+      //         <div className="beer-item">
+      //           <img className="beer-logo-show" src={beer.photoUrl} alt="" />
+      //           <ul className="beer-item-stats" >
+      //             <h2 className="beer-item-name">{beer.name}</h2>
+      //             <div className="beer-stats-top">
+      //               <li className="beer-item-ibu">IBU: {beer.ibu}</li>
+      //               <li className="beer-item-abv">ABV: {beer.abv}</li>
+      //             </div>
+      //             <div className="beer-stats-bottom">
+      //               <li className="beer-item-brewed">Brewed by: {beer.brewed_by}</li>
+      //               <li className="beer-item-avg">AVG Rating: {parseFloat(beer.average_rating).toFixed(2)}</li>
+      //             </div>
+      //             <button className="delete-btn" onClick={this.handleDelete}>DELETE</button>
+      //           </ul>
+      //         </div>
+      //       </div>
+      //       <div className="comments">
+      //         <BeerDetail beer={beer} reviews={reviews} />
+      //       </div>
+      //     </div>
+      //   )
+      // }
+    }
+  }]);
+
+  return UserShow;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (UserShow);
+
+/***/ }),
+
+/***/ "./frontend/components/user_show/user_show_container.js":
+/*!**************************************************************!*\
+  !*** ./frontend/components/user_show/user_show_container.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _reducers_users_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../reducers/users_reducer */ "./frontend/reducers/users_reducer.js");
+/* harmony import */ var _user_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user_show */ "./frontend/components/user_show/user_show.jsx");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, _ref) {
+  var match = _ref.match;
+  var userId = parseInt(match.params.userId);
+  var user = Object(_reducers_users_reducer__WEBPACK_IMPORTED_MODULE_2__["usersReducer"])(state.entities, userId); // const reviews = selectReviewsForBeer(state.entities, beer);
+
+  return {
+    // beerErrors: errorsReducer.session,
+    userId: userId,
+    user: user,
+    reviews: state.entities.reviews
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    receiveCurrentUser: function receiveCurrentUser(id) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["receiveCurrentUser"])(id));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_user_show__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
