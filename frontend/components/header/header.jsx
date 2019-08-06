@@ -23,7 +23,7 @@ const Header = ({ currentUser, logout }) => {
               </span>
               <div className="dropdown-content">
                 <div className="arrow-up"></div>
-                <Link className="header-btn">USER PROFILE</Link>
+                <Link to='/user/:userId' className="header-btn">USER PROFILE</Link>
                 <p className="header-btn" onClick={logout}><span className="button-text">LOG OUT</span></p>
               </div>
             </div>

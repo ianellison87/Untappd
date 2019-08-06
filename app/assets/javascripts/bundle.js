@@ -1305,6 +1305,7 @@ var Header = function Header(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "arrow-up"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/user/:userId",
     className: "header-btn"
   }, "USER PROFILE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "header-btn",
@@ -1957,10 +1958,8 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var match = _ref.match;
   var userId = parseInt(match.params.userId);
-  var user = Object(_reducers_users_reducer__WEBPACK_IMPORTED_MODULE_2__["usersReducer"])(state.entities, userId); // const reviews = selectReviewsForBeer(state.entities, beer);
-
+  var user = Object(_reducers_users_reducer__WEBPACK_IMPORTED_MODULE_2__["usersReducer"])(state.entities, userId);
   return {
-    // beerErrors: errorsReducer.session,
     userId: userId,
     user: user,
     reviews: state.entities.reviews

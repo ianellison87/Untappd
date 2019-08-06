@@ -7,10 +7,9 @@ import UserShow from './user_show';
 const mapStateToProps = (state, { match }) => {
   const userId = parseInt(match.params.userId);
   const user = usersReducer(state.entities, userId);
-  // const reviews = selectReviewsForBeer(state.entities, beer);
+
 
   return {
-    // beerErrors: errorsReducer.session,
     userId,
     user,
     reviews: state.entities.reviews
