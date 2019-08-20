@@ -784,6 +784,11 @@ function (_React$Component) {
         placeholder: "Brewed By",
         onChange: this.update('brewed_by')
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        type: "text",
+        value: this.state.description,
+        placeholder: "Description",
+        onChange: this.update('description')
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
         className: "file-btn",
         type: "file",
         placeholder: "Beer Logo",
@@ -992,7 +997,9 @@ var BeersIndexItem = function BeersIndexItem(_ref) {
     className: "beer-logo",
     src: beer.photoUrl,
     alt: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "description"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Description:"), " ", beer.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/beers/".concat(beer.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "beer"
@@ -1521,7 +1528,7 @@ function (_React$Component) {
               case 0:
                 e.preventDefault();
                 demoUser = {
-                  username: 'demouser',
+                  username: 'ianellison87',
                   password: 'password'
                 };
 
@@ -36045,7 +36052,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

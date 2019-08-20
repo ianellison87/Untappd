@@ -4,7 +4,7 @@
 
 .beers-index-item {
   background: white;
-  width: 700px;
+  width: 900px;
   text-align: center;
   top: 0;
   right: 0;
@@ -19,6 +19,18 @@
   padding-bottom: 50px;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
   margin-bottom: 10px;
+}
+
+.description {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #999;
+  text-align: left;
+
+}
+
+h5 {
+  font-weight: bold;
 }
 
 .beer-details {

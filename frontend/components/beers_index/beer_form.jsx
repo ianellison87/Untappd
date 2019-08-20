@@ -95,6 +95,12 @@ class BeerForm extends React.Component {
             placeholder="Brewed By"
             onChange={this.update('brewed_by')}
           />
+            <input
+              type="text"
+              value={this.state.description}
+              placeholder="Description"
+              onChange={this.update('description')}
+            />
           <input
             className="file-btn" 
             type="file"

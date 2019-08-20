@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
 
     const demoUser = {
-      username: 'demouser',
+      username: 'ianellison87',
       password: 'password'
     };
 
