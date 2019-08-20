@@ -11,9 +11,9 @@ ActiveRecord::Base.transaction do
   Beer.destroy_all
 
   demo_user = {
-    'username' => 'demouser',
+    'username' => 'ianellison87',
     'password' => 'password',
-    'email' => 'demo@user.com'
+    'email' => 'ianellison87@yahoo.com'
   }
 
   User.create!(demo_user)
@@ -52,121 +52,141 @@ ActiveRecord::Base.transaction do
       name: "Foster's Lager",
       abv: 4.0,
       ibu: 12.0,
-      brewed_by: "Australians"
+      brewed_by: "Australians",
+      description: ""
     },
     {
       name: 'All Day IPA',
       abv: 4.6,
       ibu: 30.0,
-      brewed_by: "Founders Brewing Co."
+      brewed_by: "Founders Brewing Co.",
+      description: ""
     },
     {
       name: 'Torpedo Extra Ipa',
       abv: 7.2,
       ibu: 65.0,
-      brewed_by: "Sierra Nevada Brewing Co."
+      brewed_by: "Sierra Nevada Brewing Co.",
+      description: ""
     },
     {
       name: '#9',
       abv: 5.1,
       ibu: 20.0,
-      brewed_by: "Magic Hat Brewing Company"
+      brewed_by: "Magic Hat Brewing Company",
+      description: ""
     },
     {
       name: 'Genesee Bock Beer',
       abv: 5.2,
       ibu: 0.0,
-      brewed_by: "Genesee Brewing Company"
+      brewed_by: "Genesee Brewing Company",
+      description: ""
     },
     {
       name: 'Summer Shandy',
       abv: 4.2,
       ibu: 14.0,
-      brewed_by: "Jacob Leinenkugel Brewing Company"
+      brewed_by: "Jacob Leinenkugel Brewing Company",
+      description: ""
     },
     {
       name: 'Pabst Blue Ribbon',
       abv: 4.6,
       ibu: 10.0,
-      brewed_by: "Pabst Brewing Company"
+      brewed_by: "Pabst Brewing Company",
+      description: ""
     },
     {
       name: 'White',
       abv: 5.2,
       ibu: 13.0,
-      brewed_by: "Allagash Brewing Company"
+      brewed_by: "Allagash Brewing Company",
+      description: ""
     },
     {
       name: 'Anchor Steam Beer',
       abv: 4.8,
       ibu: 35.0,
-      brewed_by: "Anchor Brewing Company"
+      brewed_by: "Anchor Brewing Company",
+      description: ""
     },
     {
       name: 'Bourbonic Plague',
       abv: 12.0,
       ibu: 0.0,
-      brewed_by: "Cascade Brewing"
+      brewed_by: "Cascade Brewing",
+      description: ""
     },
     {
       name: 'Goose IPA',
       abv: 5.9,
       ibu: 55.0,
-      brewed_by: "Goose Island Beer Co."
+      brewed_by: "Goose Island Beer Co.",
+      description: ""
     },
     {
       name: 'Two Hearted Ale',
       abv: 7.0,
       ibu: 0.0,
-      brewed_by: "Bell's Brewery"
+      brewed_by: "Bell's Brewery",
+      description: ""
     },
     {
       name: 'Breakfast Stout',
       abv: 8.3,
       ibu: 60.0,
-      brewed_by: "Founders Brewing Co."
+      brewed_by: "Founders Brewing Co.",
+      description: ""
     },
     {
       name: 'Guinness Draught',
       abv: 4.2,
       ibu: 45.0,
-      brewed_by: "Guinness"
+      brewed_by: "Guinness",
+      description: ""
     },
     {
       name: 'Corona Extra',
       abv: 4.5,
       ibu: 19.0,
-      brewed_by: "Corona Extra"
+      brewed_by: "Corona Extra",
+      description: ""
     },
     {
       name: 'CB Caged Alpha Monkey IPA',
       abv: 6.5,
       ibu: 65.0,
-      brewed_by: "CB Craft Brewers"
+      brewed_by: "CB Craft Brewers",
+      description: ""
     },
     {
       name: 'CB Makumba Double IPA',
       abv: 9.5,
       ibu: 78.0,
-      brewed_by: "CB Craft Brewers"
+      brewed_by: "CB Craft Brewers",
+      description: ""
     },
     {
       name: 'Sculpin',
       abv: 7.0,
       ibu: 70.0,
-      brewed_by: "Ballast Point Brewing Company"
+      brewed_by: "Ballast Point Brewing Company",
+      description: ""
     },
     {
       name: 'Citradelic: Tangerine IPA',
       abv: 6.0,
       ibu: 50.0,
-      brewed_by: "New Belgium Brewing Company"
+      brewed_by: "New Belgium Brewing Company",
+      description: ""
     },
     {
       name: 'Modelo Especial',
       abv: 4.5,
       ibu: 18.0,
-      brewed_by: "Grupo Modelo"
+      brewed_by: "Grupo Modelo",
+      description: ""
     },
   ]
   )

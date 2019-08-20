@@ -12,7 +12,7 @@
 #
 
 class Beer < ApplicationRecord
-  validates :name, :abv, :ibu, ,:description, :brewed_by, presence: true
+  validates :name, :abv, :ibu, :description, :brewed_by, presence: true
  
   has_many :reviews
 
