@@ -1,4 +1,4 @@
-    json.extract! beer,  :id ,:name, :ibu, :abv, :brewed_by, :average_rating
+    json.extract! beer,  :id ,:name, :ibu, :abv, :brewed_by, :average_rating, :description
     if beer.photo.attached?
       json.photoUrl url_for(beer.photo)
     else
