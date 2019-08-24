@@ -230,25 +230,25 @@ Tangerine infused orange peel."
     [{
       body: "Best beer I have ever tasted",
       rating: 4,
-      author_id: 1,
+      author_id: 2,
       beer_id: 1,
     },
     {
       body: "Too strong for my taste, I prefer a nice Natty Ice",
       rating: 2,
-      author_id: 1,
+      author_id: 4,
       beer_id: 9,
     },
     {
       body: "Best beer I have ever tasted",
       rating: 5,
-      author_id: 1,
+      author_id: 2,
       beer_id: 8,
     },
     {
       body: "Unpopular Opinion: A04 was fun",
       rating: 3.75,
-      author_id: 1,
+      author_id: 3,
       beer_id: 8,
     },
     {
@@ -260,7 +260,7 @@ Tangerine infused orange peel."
     {
       body: "I think im losing my mind",
       rating: 2.0,
-      author_id: 1,
+      author_id: 5,
       beer_id: 9,
     },
     {
@@ -272,37 +272,37 @@ Tangerine infused orange peel."
     {
       body: "First round is on me",
       rating: 3.25,
-      author_id: 1,
+      author_id: 2,
       beer_id: 12,
     },
     {
       body: "I have to write real things in this review because its near the top",
       rating: 2.25,
-      author_id: 1,
+      author_id: 3,
       beer_id: 2,
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 1.5,
-      author_id: 1,
+      author_id: 4,
       beer_id: 6,
     },
     {
       body: "Tastes like sadness",
       rating: 1.25,
-      author_id: 1,
+      author_id: 5,
       beer_id: 5,
     },
     {
       body: "Great flavors cant wait to try more like it, this brewery is AWESOME!",
       rating: 3.50,
-      author_id: 1,
+      author_id: 2,
       beer_id: 2,
     },
     {
       body: "Who am I and what am I doing with my life?",
       rating: 2.75,
-      author_id: 1,
+      author_id: 3,
       beer_id: 3,
     },
     {
@@ -314,7 +314,7 @@ Tangerine infused orange peel."
     {
       body: "I can't get enough of this stuff!",
       rating: 3,
-      author_id: 1,
+      author_id: 4,
       beer_id: 1,
     },
   ]
