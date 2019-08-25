@@ -12,7 +12,7 @@ class ReviewForm extends React.Component {
     this.navigateToBeerShow = this.navigateToBeerShow.bind(this);
   }
 
-  navigateToBenerShow() {
+  navigateToBeerShow() {
     const url = `/beers/${this.props.match.params.beerId}`
     this.props.history.push(url);
   }

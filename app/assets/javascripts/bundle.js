@@ -1077,8 +1077,8 @@ function (_React$Component) {
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ReviewForm, [{
-    key: "navigateToBenerShow",
-    value: function navigateToBenerShow() {
+    key: "navigateToBeerShow",
+    value: function navigateToBeerShow() {
       var url = "/beers/".concat(this.props.match.params.beerId);
       this.props.history.push(url);
     }
