@@ -290,7 +290,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _components_beers_index_review_form_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/beers_index/review_form_container */ "./frontend/components/beers_index/review_form_container.js");
 /* harmony import */ var _components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/reviews_index/reviews_index_container */ "./frontend/components/reviews_index/reviews_index_container.js");
-/* harmony import */ var _components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _components_beers_index_beers_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/beers_index/beers_index_container */ "./frontend/components/beers_index/beers_index_container.js");
 /* harmony import */ var _components_beers_index_beer_form_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/beers_index/beer_form_container */ "./frontend/components/beers_index/beer_form_container.js");
 /* harmony import */ var _components_beer_show_beer_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/beer_show/beer_show_container */ "./frontend/components/beer_show/beer_show_container.js");
@@ -323,7 +322,7 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     exact: true,
     path: "/reviews",
-    component: _components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8___default.a
+    component: _components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     exact: true,
     path: "/reviews/new",
@@ -1366,10 +1365,44 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 /*!**********************************************************************!*\
   !*** ./frontend/components/reviews_index/reviews_index_container.js ***!
   \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
 
+
+var Review = function Review(_ref) {
+  var review = _ref.review,
+      author = _ref.author;
+  var rating = review.rating,
+      body = review.body,
+      photoUrl = review.photoUrl;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p1", {
+    className: "body-text"
+  }, "\"", body, "\""), " - by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p2", {
+    className: "author"
+  }, author.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "review-photo",
+    src: photoUrl
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "rating-text"
+  }, "Rating: ", rating)));
+};
+
+var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
+  var users = _ref2.entities.users;
+  var review = _ref3.review;
+  return {
+    author: users[review.author_id]
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Review));
 
 /***/ }),
 
