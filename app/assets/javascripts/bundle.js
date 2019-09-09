@@ -1370,39 +1370,22 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_beer_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/beer_actions */ "./frontend/actions/beer_actions.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module './review_form'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 
-var Review = function Review(_ref) {
-  var review = _ref.review,
-      author = _ref.author;
-  var rating = review.rating,
-      body = review.body,
-      photoUrl = review.photoUrl;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p1", {
-    className: "body-text"
-  }, "\"", body, "\""), " - by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p2", {
-    className: "author"
-  }, author.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "review-photo",
-    src: photoUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "rating-text"
-  }, "Rating: ", rating)));
-};
 
-var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
-  var users = _ref2.entities.users;
-  var review = _ref3.review;
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    author: users[review.author_id]
+    createReview: function createReview(review) {
+      return dispatch(Object(_actions_beer_actions__WEBPACK_IMPORTED_MODULE_1__["createReview"])(review));
+    }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Review));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(!(function webpackMissingModule() { var e = new Error("Cannot find module './review_form'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
 
 /***/ }),
 
