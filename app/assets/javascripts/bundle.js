@@ -1372,7 +1372,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_beer_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/beer_actions */ "./frontend/actions/beer_actions.js");
-!(function webpackMissingModule() { var e = new Error("Cannot find module './review_form'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _beers_index_beer_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../beers_index/beer_form */ "./frontend/components/beers_index/beer_form.jsx");
 
 
 
@@ -1385,7 +1385,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(!(function webpackMissingModule() { var e = new Error("Cannot find module './review_form'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_beers_index_beer_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
