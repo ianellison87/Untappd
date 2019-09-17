@@ -14,7 +14,7 @@ const Header = ({ currentUser, logout }) => {
           </div>
           <div className="header-link">
             <Link className="header-link-text" to='/home'>BEERS</Link>
-            <Link className="header-link-text"to='/home'>REVIEWS</Link>
+            <Link className="header-link-text"to='/reviews'>REVIEWS</Link>
           </div>
           <div className="header-right">
             <div className="dropdown">

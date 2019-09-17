@@ -1297,7 +1297,7 @@ var Header = function Header(_ref) {
     to: "/home"
   }, "BEERS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "header-link-text",
-    to: "/home"
+    to: "/reviews"
   }, "REVIEWS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-right"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
