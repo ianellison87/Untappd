@@ -988,7 +988,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var BeersIndexItem = function BeersIndexItem(_ref) {
   var beer = _ref.beer;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/beers/".concat(beer.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "beers-index-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "beer-name"
@@ -998,11 +1000,9 @@ var BeersIndexItem = function BeersIndexItem(_ref) {
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "description"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Description:"), " ", beer.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/beers/".concat(beer.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Description:"), " ", beer.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "beer"
-  }, beer.name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, beer.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "beer-details"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "ibu"
@@ -1012,7 +1012,7 @@ var BeersIndexItem = function BeersIndexItem(_ref) {
     className: "brewer"
   }, beer.brewed_by), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "rating"
-  }, parseFloat(beer.average_rating).toFixed(2))));
+  }, parseFloat(beer.average_rating).toFixed(2)))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BeersIndexItem);
@@ -36068,7 +36068,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
