@@ -1372,7 +1372,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_beer_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/beer_actions */ "./frontend/actions/beer_actions.js");
-/* harmony import */ var _beers_index_beer_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../beers_index/beer_form */ "./frontend/components/beers_index/beer_form.jsx");
+/* harmony import */ var _beers_index_review_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../beers_index/review_form */ "./frontend/components/beers_index/review_form.jsx");
 
 
 
@@ -1385,7 +1385,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_beers_index_beer_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_beers_index_review_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1971,17 +1971,16 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _reducers_users_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../reducers/users_reducer */ "./frontend/reducers/users_reducer.js");
-/* harmony import */ var _user_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user_show */ "./frontend/components/user_show/user_show.jsx");
+/* harmony import */ var _user_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user_show */ "./frontend/components/user_show/user_show.jsx");
 
-
+ // import { usersReducer } from '../../reducers/users_reducer';
 
 
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var match = _ref.match;
   var userId = parseInt(match.params.userId);
-  var user = Object(_reducers_users_reducer__WEBPACK_IMPORTED_MODULE_2__["usersReducer"])(state.entities, userId);
+  var user = usersReducer(state.entities, userId);
   return {
     userId: userId,
     user: user,
@@ -1997,7 +1996,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_user_show__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_user_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -2190,6 +2189,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./errors_reducer */ "./frontend/reducers/errors_reducer.js");
 /* harmony import */ var _ui_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ui_reducer */ "./frontend/reducers/ui_reducer.js");
 /* harmony import */ var _beers_errors_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./beers_errors_reducer */ "./frontend/reducers/beers_errors_reducer.js");
+/* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
+
 
 
 
@@ -2197,6 +2198,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_6__["default"],
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   session: _session_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   errors: _errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
