@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
                       value={this.state.username}
                       onChange={this.update('username')}
                       className="login-input"
-                      placeholder="|  Username"
+                      placeholder="  Username"
                    />
                 </label>
               </div>
@@ -115,7 +115,7 @@ class SessionForm extends React.Component {
                       value={this.state.email}
                       onChange={this.update('email')}
                       className="login-input"
-                      placeholder="|  Email"
+                      placeholder="  Email"
                     />
                   </label>
               </div>
@@ -128,7 +128,7 @@ class SessionForm extends React.Component {
                       value={this.state.password}
                       onChange={this.update('password')}
                       className="login-input"
-                      placeholder="|  Password"
+                      placeholder="  Password"
                     />
                 </label>
               </div>
@@ -181,7 +181,7 @@ class SessionForm extends React.Component {
                         value={this.state.username}
                         onChange={this.update('username')}
                         className="login-input"
-                        placeholder="|  Username"
+                        placeholder="  Username"
                       />
                   </label>
                 </div>
@@ -194,7 +194,7 @@ class SessionForm extends React.Component {
                         value={this.state.password}
                         onChange={this.update('password')}
                         className="login-input"
-                        placeholder="|  Password"
+                        placeholder="  Password"
                       />
                   </label>
                 </div>

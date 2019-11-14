@@ -1683,7 +1683,7 @@ function (_React$Component) {
           value: this.state.username,
           onChange: this.update('username'),
           className: "login-input",
-          placeholder: "|  Username"
+          placeholder: "  Username"
         }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "inputs"
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("img", {
@@ -1694,7 +1694,7 @@ function (_React$Component) {
           value: this.state.email,
           onChange: this.update('email'),
           className: "login-input",
-          placeholder: "|  Email"
+          placeholder: "  Email"
         }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "inputs"
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("img", {
@@ -1705,7 +1705,7 @@ function (_React$Component) {
           value: this.state.password,
           onChange: this.update('password'),
           className: "login-input",
-          placeholder: "|  Password"
+          placeholder: "  Password"
         }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "disclaimer"
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", null, "You must be of legal drinking age in your country to join Unbarreld.")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
@@ -1750,7 +1750,7 @@ function (_React$Component) {
           value: this.state.username,
           onChange: this.update('username'),
           className: "login-input",
-          placeholder: "|  Username"
+          placeholder: "  Username"
         }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           className: "inputs"
         }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("img", {
@@ -1762,7 +1762,7 @@ function (_React$Component) {
           value: this.state.password,
           onChange: this.update('password'),
           className: "login-input",
-          placeholder: "|  Password"
+          placeholder: "  Password"
         }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
           className: "session-submit",
           type: "submit",
