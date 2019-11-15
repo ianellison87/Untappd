@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import BeerDetail from './beer_detail';
 import HeaderContainer from '../header/header_container';
-import Header from '../header/header';
 import BeerDetail from './beer_detail';
 
 class BeerShow extends React.Component {

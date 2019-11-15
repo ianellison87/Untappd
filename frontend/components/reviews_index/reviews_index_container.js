@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 
-import { createReview } from '../../actions/beer_actions';
-import ReviewForm from '../beers_index/review_form';
+import ReviewsIndex from './review_index';
+import { requestAllReviews } from '../../reducers/beers_reducer';
+import { selectAllReviews } from '../../reducers/selectors';
 
-const mapDispatchToProps = dispatch => ({
-  createReview: review => dispatch(createReview(review))
+const mapStateToProps = state => ({
+  reviews: selectAllReviews(state)
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(ReviewForm);
+const mapDispatchToProps = dispatch => ({
+  requestAllReviews: () => dispatch(requestAllReviews())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewsIndex);

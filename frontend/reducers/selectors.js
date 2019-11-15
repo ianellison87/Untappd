@@ -4,9 +4,9 @@ export const selectBeer = ({ beers }, beerId) => {
   return beers[beerId] || { reviewIds: [] };
 };
 
-// export const selectReviewsForBeer = ({ beers, reviews }, beer) => {
-//   return beer.reviewIds.map(reviewId => reviews[reviewId]);
-// };
+export const selectReviews = ({ beers, reviews }, beer) => {
+  return beer.reviewIds.map(reviewId => reviews[reviewId]);
+};
 
 export const asArray = ({ beers }) => (
   Object.keys(beers).map(key => beers[key])
