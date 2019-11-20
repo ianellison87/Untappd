@@ -290,6 +290,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _components_beers_index_review_form_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/beers_index/review_form_container */ "./frontend/components/beers_index/review_form_container.js");
 /* harmony import */ var _components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/reviews_index/reviews_index_container */ "./frontend/components/reviews_index/reviews_index_container.js");
+/* harmony import */ var _components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _components_beers_index_beers_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/beers_index/beers_index_container */ "./frontend/components/beers_index/beers_index_container.js");
 /* harmony import */ var _components_beers_index_beer_form_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/beers_index/beer_form_container */ "./frontend/components/beers_index/beer_form_container.js");
 /* harmony import */ var _components_beer_show_beer_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/beer_show/beer_show_container */ "./frontend/components/beer_show/beer_show_container.js");
@@ -322,7 +323,7 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     exact: true,
     path: "/reviews",
-    component: _components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _components_reviews_index_reviews_index_container__WEBPACK_IMPORTED_MODULE_8___default.a
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     exact: true,
     path: "/reviews/new",
@@ -998,7 +999,9 @@ var BeersIndexItem = function BeersIndexItem(_ref) {
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "description"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Description:"), " ", beer.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "description-title"
+  }, "Description:"), " ", beer.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "beer"
   }, beer.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "beer-details"
@@ -1359,175 +1362,24 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/reviews_index/review_index.jsx":
-/*!************************************************************!*\
-  !*** ./frontend/components/reviews_index/review_index.jsx ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _review_index_item__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./review_index_item */ "./frontend/components/reviews_index/review_index_item.jsx");
-/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
-/* harmony import */ var _beer_show_beer_detail__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../beer_show/beer_detail */ "./frontend/components/beer_show/beer_detail.jsx");
-
-
-
-
-
-
-
-
- // import BeerFormContainer from './beer_form_container';
-// import BeerShowContainer from '../beer_show/beer_show_container'
-
-
-
-
-var ReviewsIndex =
-/*#__PURE__*/
-function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(ReviewsIndex, _Component);
-
-  function ReviewsIndex() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ReviewsIndex);
-
-    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(ReviewsIndex).apply(this, arguments));
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ReviewsIndex, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.requestAllReviews();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var reviews = this.props.reviews;
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "beers-index"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_beer_show_beer_detail__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "top-background"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "beers-index-page"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "beers-list-title"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
-        className: "beer-list"
-      }, "Beers List"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-        to: "beers/new",
-        className: "new-beer-btn",
-        context: true
-      }, "Add New Beer")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "content-box"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", null, reviews.map(function (beer) {
-        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          key: beer.id,
-          beer: beer
-        });
-      })))));
-    }
-  }]);
-
-  return ReviewsIndex;
-}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (ReviewsIndex);
-
-/***/ }),
-
-/***/ "./frontend/components/reviews_index/review_index_item.jsx":
-/*!*****************************************************************!*\
-  !*** ./frontend/components/reviews_index/review_index_item.jsx ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-
-
-
-var Review = function Review(_ref) {
-  var review = _ref.review,
-      author = _ref.author;
-  var rating = review.rating,
-      body = review.body,
-      photoUrl = review.photoUrl;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p1", {
-    className: "body-text"
-  }, "\"", body, "\""), " - by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p2", {
-    className: "author"
-  }, author.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "review-photo",
-    src: photoUrl
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "rating-text"
-  }, "Rating: ", rating)));
-};
-
-var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
-  var users = _ref2.entities.users;
-  var review = _ref3.review;
-  return {
-    author: users[review.author_id]
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Review));
-
-/***/ }),
-
 /***/ "./frontend/components/reviews_index/reviews_index_container.js":
 /*!**********************************************************************!*\
   !*** ./frontend/components/reviews_index/reviews_index_container.js ***!
   \**********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _review_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./review_index */ "./frontend/components/reviews_index/review_index.jsx");
-/* harmony import */ var _reducers_beers_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../reducers/beers_reducer */ "./frontend/reducers/beers_reducer.js");
-/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
-
-
-
-
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    reviews: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["selectAllReviews"])(state)
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    requestAllReviews: function requestAllReviews() {
-      return dispatch(Object(_reducers_beers_reducer__WEBPACK_IMPORTED_MODULE_2__["requestAllReviews"])());
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_review_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
+// import { connect } from 'react-redux';
+// import ReviewsIndex from './review_index';
+// // import { requestAllReviews } from '../../reducers/beers_reducer';
+// import { selectAllReviews } from '../../reducers/selectors';
+// const mapStateToProps = state => ({
+//   reviews: selectAllReviews(state)
+// });
+// // const mapDispatchToProps = dispatch => ({
+// //   requestAllReviews: () => dispatch(requestAllReviews())
+// // });
+// export default connect(mapStateToProps)(ReviewsIndex);
 
 /***/ }),
 
