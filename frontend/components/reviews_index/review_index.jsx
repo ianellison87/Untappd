@@ -22,7 +22,6 @@ class ReviewsIndex extends Component {
      
       for (let i = 0; i < allBeers.length; i++) {
         const beer = allBeers[i];
-        console.log(beer.reviewIds)
         
         reviews.push(beer.reviewIds[0])
       };
@@ -46,7 +45,7 @@ class ReviewsIndex extends Component {
           </div>
           <div className="content-box">
             <ul>
-              {/* {reviews.map(beer => <Review key={beer.id} beer={beer} />)} hello */}
+              {reviews.map(review => <Review key={review.id} review={review}/>)}
             </ul>
           </div>
         </div>

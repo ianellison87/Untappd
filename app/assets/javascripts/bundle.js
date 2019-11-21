@@ -1425,7 +1425,6 @@ function (_Component) {
 
       for (var i = 0; i < allBeers.length; i++) {
         var beer = allBeers[i];
-        console.log(beer.reviewIds);
         reviews.push(beer.reviewIds[0]);
       }
 
@@ -1448,7 +1447,12 @@ function (_Component) {
         context: true
       }, "Add New Beer")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "content-box"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", null))));
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", null, reviews.map(function (review) {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          key: review.id,
+          review: review
+        });
+      })))));
     }
   }]);
 
