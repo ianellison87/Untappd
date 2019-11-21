@@ -25,4 +25,7 @@ class Beer < ApplicationRecord
     reviews.average(:rating)
   end
 
+  #add beers reviewed
+
+
 end
