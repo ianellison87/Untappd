@@ -30,27 +30,26 @@ class ReviewsIndex extends Component {
     reviews = reviews.flat()
 
     return (
-      
-      <div className="beers-index">
+      // <div className="beers-index">
 
-        <HeaderContainer />
-        {/* <BeerDetail/> */}
-        <div className="top-background">
-        </div>
-        {/* <Route exact path="/beers/new" component={BeerFormContainer}/>  */}
-        {/* <Route exact path="/beers/:beerId" component={BeerShowContainer}/>  */}
-        <div className="beers-index-page">
-          <div className="beers-list-title">
-            <h3 className="beer-list">Beers List</h3>
-            <Link to="beers/new" className="new-beer-btn" context>Add New Beer</Link>
-          </div>
-          <div className="content-box">
-            <ul>
-              {reviews.map(beer => <Review key={beer.id} beer={beer} />)} hello
-            </ul>
-          </div>
-        </div>
-      </div>
+      //   <HeaderContainer />
+      //   {/* <BeerDetail/> */}
+      //   <div className="top-background">
+      //   </div>
+      //   {/* <Route exact path="/beers/new" component={BeerFormContainer}/>  */}
+      //   {/* <Route exact path="/beers/:beerId" component={BeerShowContainer}/>  */}
+      //   <div className="beers-index-page">
+      //     <div className="beers-list-title">
+      //       <h3 className="beer-list">Beers List</h3>
+      //       <Link to="beers/new" className="new-beer-btn" context>Add New Beer</Link>
+      //     </div>
+      //     <div className="content-box">
+      //       <ul>
+      //         {reviews.map(beer => <Review key={beer.id} beer={beer} />)} hello
+      //       </ul>
+      //     </div>
+      //   </div>
+      // </div>
     );
   }
 }
