@@ -45,7 +45,7 @@ class ReviewsIndex extends Component {
           </div>
           <div className="content-box">
             <ul>
-              {reviews.map(review => <Review key={review.id} review={review}/>)}
+              {reviews.map(review => <Review key={review.id} review={review} beer={allBeers}/>)}
             </ul>
           </div>
         </div>
