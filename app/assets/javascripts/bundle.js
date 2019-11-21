@@ -1727,7 +1727,7 @@ function (_React$Component) {
         }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("input", {
           className: "demo-user-button",
           type: "button",
-          value: "Connect with DEMOBOOK",
+          value: "Connect with DEMO LOGIN",
           onClick: this.demoLogin
         })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
           className: "or"
