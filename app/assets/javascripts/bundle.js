@@ -1366,9 +1366,147 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   !*** ./frontend/components/reviews_index/review_index.jsx ***!
   \************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/ian/Desktop/unbarreld/frontend/components/reviews_index/review_index.jsx: Unexpected token (53:4)\n\n\u001b[0m \u001b[90m 51 | \u001b[39m      \u001b[90m//   </div>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 52 | \u001b[39m      \u001b[90m// </div>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 | \u001b[39m    )\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 54 | \u001b[39m  }\u001b[0m\n\u001b[0m \u001b[90m 55 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 56 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[33mReviewsIndex\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n    at Object.raise (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:6344:17)\n    at Object.unexpected (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:7659:16)\n    at Object.parseParenAndDistinguishExpression (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:8994:12)\n    at Object.parseExprAtom (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:8760:21)\n    at Object.parseExprAtom (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:3599:20)\n    at Object.parseExprSubscripts (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:8413:23)\n    at Object.parseMaybeUnary (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:8393:21)\n    at Object.parseExprOps (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:8280:23)\n    at Object.parseMaybeConditional (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:8253:23)\n    at Object.parseMaybeAssign (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:8200:21)\n    at Object.parseExpression (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:8148:23)\n    at Object.parseReturnStatement (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10157:28)\n    at Object.parseStatementContent (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:9836:21)\n    at Object.parseStatement (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:9788:17)\n    at Object.parseBlockOrModuleBlockBody (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10364:25)\n    at Object.parseBlockBody (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10351:10)\n    at Object.parseBlock (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10335:10)\n    at Object.parseFunctionBody (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:9408:24)\n    at Object.parseFunctionBodyAndFinish (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:9378:10)\n    at Object.parseMethod (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:9332:10)\n    at Object.pushClassMethod (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10767:30)\n    at Object.parseClassMemberWithIsStatic (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10692:12)\n    at Object.parseClassMember (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10631:10)\n    at withTopicForbiddingContext (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10586:14)\n    at Object.withTopicForbiddingContext (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:9683:14)\n    at Object.parseClassBody (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10563:10)\n    at Object.parseClass (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10537:22)\n    at Object.parseStatementContent (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:9830:21)\n    at Object.parseStatement (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:9788:17)\n    at Object.parseBlockOrModuleBlockBody (/home/ian/Desktop/unbarreld/node_modules/@babel/parser/lib/index.js:10364:25)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_readOnlyError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/readOnlyError */ "./node_modules/@babel/runtime/helpers/readOnlyError.js");
+/* harmony import */ var _babel_runtime_helpers_readOnlyError__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_readOnlyError__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _review_index_item__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./review_index_item */ "./frontend/components/reviews_index/review_index_item.jsx");
+/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
+/* harmony import */ var _beer_show_beer_detail__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../beer_show/beer_detail */ "./frontend/components/beer_show/beer_detail.jsx");
+
+
+
+
+
+
+
+
+
+
+ // import BeerFormContainer from './beer_form_container';
+// import BeerShowContainer from '../beer_show/beer_show_container'
+
+
+
+
+var ReviewsIndex =
+/*#__PURE__*/
+function (_Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default()(ReviewsIndex, _Component);
+
+  function ReviewsIndex() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, ReviewsIndex);
+
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(ReviewsIndex).apply(this, arguments));
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ReviewsIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.requestAllBeers();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var allBeers = this.props.beers;
+      var reviews = [];
+
+      for (var i = 0; i < allBeers.length; i++) {
+        var beer = allBeers[i];
+        console.log(beer.reviewIds);
+        reviews.push(beer.reviewIds[0]);
+      }
+
+      reviews = (_babel_runtime_helpers_readOnlyError__WEBPACK_IMPORTED_MODULE_0___default()("reviews"), reviews.flat());
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        className: "beers-index"
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        className: "top-background"
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        className: "beers-index-page"
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        className: "beers-list-title"
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h3", {
+        className: "beer-list"
+      }, "Beers List"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+        to: "beers/new",
+        className: "new-beer-btn",
+        context: true
+      }, "Add New Beer")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        className: "content-box"
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("ul", null, reviews.map(function (beer) {
+        return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          key: beer.id,
+          beer: beer
+        });
+      }), " hello"))));
+    }
+  }]);
+
+  return ReviewsIndex;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (ReviewsIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/reviews_index/review_index_item.jsx":
+/*!*****************************************************************!*\
+  !*** ./frontend/components/reviews_index/review_index_item.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+var Review = function Review(_ref) {
+  var review = _ref.review,
+      author = _ref.author;
+  var rating = review.rating,
+      body = review.body,
+      photoUrl = review.photoUrl;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p1", {
+    className: "body-text"
+  }, "\"", body, "\""), " - by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p2", {
+    className: "author"
+  }, author.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "review-photo",
+    src: photoUrl
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "rating-text"
+  }, "Rating: ", rating)));
+};
+
+var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
+  var users = _ref2.entities.users;
+  var review = _ref3.review;
+  return {
+    author: users[review.author_id]
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Review));
 
 /***/ }),
 
@@ -3015,6 +3153,21 @@ function _possibleConstructorReturn(self, call) {
 }
 
 module.exports = _possibleConstructorReturn;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/readOnlyError.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/readOnlyError.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _readOnlyError(name) {
+  throw new Error("\"" + name + "\" is read-only");
+}
+
+module.exports = _readOnlyError;
 
 /***/ }),
 
