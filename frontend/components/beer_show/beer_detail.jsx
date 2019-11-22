@@ -9,8 +9,8 @@ const reviewList = (reviews) => {
     <div className="single-comment">
     
       <ReviewListItemContainer
-        review={review}
         key={review.id}
+        review={review}
       />
     </div >
 

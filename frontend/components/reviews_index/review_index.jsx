@@ -27,7 +27,7 @@ class ReviewsIndex extends Component {
       };
 
     reviews = reviews.flat();
-
+      
     return (
       
       <div className="beers-index">
@@ -42,6 +42,7 @@ class ReviewsIndex extends Component {
           <div className="content-box">
             <ul>
               {reviews.map(review => <Review key={review.id} review={review} beer={beerNames}/>)}
+              {/* {reviews.map(review => console.log(review.author_id, review, beerNames))} */}
             </ul>
           </div>
         </div>

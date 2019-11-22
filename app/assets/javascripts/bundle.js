@@ -377,8 +377,8 @@ var reviewList = function reviewList(reviews) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "single-comment"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_list_item_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      review: review,
-      key: review.id
+      key: review.id,
+      review: review
     }));
   });
 };
@@ -1474,16 +1474,13 @@ var Review = function Review(_ref) {
   var review = _ref.review,
       author = _ref.author,
       beer = _ref.beer;
-  // console.log(review)
   var rating = review.rating,
       body = review.body,
       photoUrl = review.photoUrl,
       beer_id = review.beer_id;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer[beer_id]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "body-text"
-  }, "\"", body, "\""), " - by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "author"
-  }, author.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "\"", body, "\""), " - by "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "review-photo",
     src: photoUrl
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
