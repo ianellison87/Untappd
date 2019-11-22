@@ -1422,15 +1422,18 @@ function (_Component) {
     value: function render() {
       var allBeers = this.props.beers;
       var reviews = [];
+      var beerNames = [];
 
       for (var i = 0; i < allBeers.length; i++) {
         var beer = allBeers[i];
+        beerNames.push(beer.name);
         reviews.push(beer.reviewIds[0]);
       }
 
       ;
       reviews = reviews.flat();
       console.log(reviews);
+      console.log(beerNames);
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-index"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -1451,7 +1454,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_7__["default"], {
           key: review.id,
           review: review,
-          beer: allBeers
+          beer: beerNames
         });
       })))));
     }
@@ -1481,13 +1484,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var Review = function Review(_ref) {
   var review = _ref.review,
-      author = _ref.author;
+      author = _ref.author,
+      beer = _ref.beer;
   console.log(review);
   var rating = review.rating,
       body = review.body,
       photoUrl = review.photoUrl,
       beer_id = review.beer_id;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer_id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer[beer_id]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "body-text"
   }, "\"", body, "\""), " - by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "author"
