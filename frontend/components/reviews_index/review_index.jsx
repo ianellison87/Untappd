@@ -27,8 +27,7 @@ class ReviewsIndex extends Component {
       };
 
     reviews = reviews.flat();
-    console.log(reviews);
-    console.log(beerNames);
+
     return (
       
       <div className="beers-index">

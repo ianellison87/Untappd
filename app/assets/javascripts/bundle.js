@@ -399,8 +399,7 @@ var BeerDetail = function BeerDetail(_ref) {
     // </ul> */}
     react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "reviews"
-    }, reviewList(reviews))
-    /* {reviews && reviews.map(review => <li>{review.body}</li>)} */
+    }, reviewList(reviews)) // {reviews && reviews.map(review => <li>{review.body}</li>)} 
     // </div>
 
   );
@@ -443,7 +442,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import BeerDetail from './beer_detail';
 
 
 
@@ -1432,8 +1430,6 @@ function (_Component) {
 
       ;
       reviews = reviews.flat();
-      console.log(reviews);
-      console.log(beerNames);
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-index"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -1478,7 +1474,7 @@ var Review = function Review(_ref) {
   var review = _ref.review,
       author = _ref.author,
       beer = _ref.beer;
-  console.log(review);
+  // console.log(review)
   var rating = review.rating,
       body = review.body,
       photoUrl = review.photoUrl,

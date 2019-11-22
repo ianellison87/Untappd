@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import BeerDetail from './beer_detail';
 import HeaderContainer from '../header/header_container';
 import BeerDetail from './beer_detail';
 

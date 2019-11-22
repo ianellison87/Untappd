@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Review = ({ review, author, beer }) => {
-  console.log(review)
+  // console.log(review)
   const { rating, body, photoUrl, beer_id } = review;
   return (
     <div>

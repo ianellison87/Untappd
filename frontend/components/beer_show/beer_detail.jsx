@@ -33,7 +33,7 @@ const BeerDetail = ({ beer, reviews }) => {
       <div className="reviews">
           {reviewList(reviews)}
       </div>
-    /* {reviews && reviews.map(review => <li>{review.body}</li>)} */
+      // {reviews && reviews.map(review => <li>{review.body}</li>)} 
     // </div>
   )
 }
