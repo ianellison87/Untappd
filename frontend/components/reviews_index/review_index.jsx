@@ -40,10 +40,6 @@ class ReviewsIndex extends Component {
         {/* <Route exact path="/beers/new" component={BeerFormContainer}/>  */}
         {/* <Route exact path="/beers/:beerId" component={BeerShowContainer}/>  */}
         <div className="beers-index-page">
-          <div className="beers-list-title">
-            <h3 className="beer-list">Beers List</h3>
-            <Link to="beers/new" className="new-beer-btn" context>Add New Beer</Link>
-          </div>
           <div className="content-box">
             <ul>
               {reviews.map(review => <Review key={review.id} review={review} beer={beerNames}/>)}

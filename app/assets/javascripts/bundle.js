@@ -1441,14 +1441,6 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-index-page"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "beers-list-title"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
-        className: "beer-list"
-      }, "Beers List"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-        to: "beers/new",
-        className: "new-beer-btn",
-        context: true
-      }, "Add New Beer")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "content-box"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", null, reviews.map(function (review) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_7__["default"], {
