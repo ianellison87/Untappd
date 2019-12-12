@@ -23,8 +23,7 @@ const App = () => (
   <div>
     <header>
       <div className="app-title">
-        
-       
+
       </div>
     </header>
     <Switch>
