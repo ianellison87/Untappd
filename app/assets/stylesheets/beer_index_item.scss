@@ -183,3 +183,20 @@ h5 {
   font-weight: bold;
   color: black;
 }
+
+.rate {
+  margin: auto;
+  text-decoration: none;
+  background-color: #ffcb00;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  width: 50%;
+}
+
+.rate:hover {
+  cursor: pointer;
+  background-color: #f3c200;
+}

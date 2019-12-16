@@ -16,6 +16,7 @@ const BeersIndexItem = ({ beer }) => (
             <li className="brewer">{beer.brewed_by}</li>
             <li className="rating">{parseFloat(beer.average_rating).toFixed(2)}</li>
         </div>
+      <Link to={`reviews/new`}><button className="rate">Rate This Beer</button></Link>
     </div>
   </Link>
 )

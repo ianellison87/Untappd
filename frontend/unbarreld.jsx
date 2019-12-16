@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-var http = require("http");
+// var http = require("http");
 
-setInterval(function () {
-  http.get("http://https://unbarreld.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
+// setInterval(function () {
+//   http.get("https://unbarreld.herokuapp.com");
+// }, 300000); // every 5 minutes (300000)
 

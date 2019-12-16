@@ -17,15 +17,18 @@ class ReviewsIndex extends Component {
 
   render() {
     const  allBeers  = this.props.beers;
+    // console.log(this.props.beers)
     let reviews = [];
     let beerNames = [];
+    let urls = [];
      
       for (let i = 0; i < allBeers.length; i++) {
         const beer = allBeers[i];
         beerNames.push(beer.name);
         reviews.push(beer.reviewIds[0]);
+        urls.push(beer.photoUrl);
       };
-
+      
     reviews = reviews.flat();
       
     return (
@@ -41,7 +44,7 @@ class ReviewsIndex extends Component {
         <div className="beers-index-page">
           <div className="content-box">
             <ul>
-              {reviews.map(review => <Review key={review.id} review={review} beer={beerNames}/>)}
+              {reviews.map(review => <Review key={review.id} review={review} beer={beerNames} url={urls}/>)}
               {/* {reviews.map(review => console.log(review.author_id, review, beerNames))} */}
             </ul>
           </div>
