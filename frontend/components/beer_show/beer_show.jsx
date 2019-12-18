@@ -7,12 +7,28 @@ class BeerShow extends React.Component {
   constructor(props){
     super(props)
 
-    this.state = this.props.beer
+    this.state = {
+                  beer: this.props.beer,
+                  review: Object.values(this.props.reviews)
+                }
 
     this.handleDelete = this.handleDelete.bind(this)
   }
   componentDidMount(){
     this.props.requestSingleBeer(this.props.beerId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.reviews) return
+    let reviews = [];
+    Object.values(nextProps.reviews).forEach(review => {
+      // console.log(review.beer_id, this.props.beerId)
+      if (review.beer_id === this.props.beerId) {
+        reviews.push(review)
+      }
+    })
+    this.setState({review: reviews})
+    console.log(this.state)
   }
 
 
@@ -28,7 +44,8 @@ class BeerShow extends React.Component {
   render() {
     // console.log(this.props.reviews)
     let beer = this.props.beer
-    let reviews = Object.values(this.props.reviews)
+    let reviews = this.state.review
+    console.log(reviews)
     if (!beer) {
       return <div>
         Loading...

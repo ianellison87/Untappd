@@ -62,3 +62,5 @@ export const removeBeer = beer => ({
   type: REMOVE_BEER,
   beer
 })
+
+// request and receive all reviews

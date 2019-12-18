@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 const Review = ({ review, author, beer, url }) => {
 
   const { rating, body, beer_id } = review;
-  console.log(review);
+  // console.log(review);
+  console.log(url);
   return (
     <div>
       <ul>
         <li>{beer[beer_id]}</li>
         <li><span className="body-text">"{body}"</span> by <span className="author">{author.username}</span></li>
-        <li><img className="review-photo" src={beer[beer_id].photoUrl} /></li>
+        <li><img className="review-photo" src={url} /></li>
         <li className="rating-text">Rating: {rating}</li>
       </ul>
     </div>

@@ -191,7 +191,7 @@ var removeBeer = function removeBeer(beer) {
     type: REMOVE_BEER,
     beer: beer
   };
-};
+}; // request and receive all reviews
 
 /***/ }),
 
@@ -457,7 +457,10 @@ function (_React$Component) {
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, BeerShow);
 
     _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(BeerShow).call(this, props));
-    _this.state = _this.props.beer;
+    _this.state = {
+      beer: _this.props.beer,
+      review: Object.values(_this.props.reviews)
+    };
     _this.handleDelete = _this.handleDelete.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
     return _this;
   }
@@ -466,6 +469,24 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.requestSingleBeer(this.props.beerId);
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      var _this2 = this;
+
+      if (!nextProps.reviews) return;
+      var reviews = [];
+      Object.values(nextProps.reviews).forEach(function (review) {
+        // console.log(review.beer_id, this.props.beerId)
+        if (review.beer_id === _this2.props.beerId) {
+          reviews.push(review);
+        }
+      });
+      this.setState({
+        review: reviews
+      });
+      console.log(this.state);
     }
   }, {
     key: "handleDelete",
@@ -480,7 +501,8 @@ function (_React$Component) {
     value: function render() {
       // console.log(this.props.reviews)
       var beer = this.props.beer;
-      var reviews = Object.values(this.props.reviews);
+      var reviews = this.state.review;
+      console.log(reviews);
 
       if (!beer) {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", null, "Loading...");
@@ -1426,13 +1448,13 @@ function (_Component) {
 
       var reviews = [];
       var beerNames = [];
-      var urls = [];
+      var urls = {};
 
       for (var i = 0; i < allBeers.length; i++) {
         var beer = allBeers[i];
         beerNames.push(beer.name);
         reviews.push(beer.reviewIds[0]);
-        urls.push(beer.photoUrl);
+        urls[beer.id] = beer.photoUrl;
       }
 
       ;
@@ -1450,7 +1472,7 @@ function (_Component) {
           key: review.id,
           review: review,
           beer: beerNames,
-          url: urls
+          url: review.photoUrl
         });
       })))));
     }
@@ -1485,15 +1507,16 @@ var Review = function Review(_ref) {
       url = _ref.url;
   var rating = review.rating,
       body = review.body,
-      beer_id = review.beer_id;
-  console.log(review);
+      beer_id = review.beer_id; // console.log(review);
+
+  console.log(url);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer[beer_id]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "body-text"
   }, "\"", body, "\""), " by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "author"
   }, author.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "review-photo",
-    src: beer[beer_id].photoUrl
+    src: url
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "rating-text"
   }, "Rating: ", rating)));

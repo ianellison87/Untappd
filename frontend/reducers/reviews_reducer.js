@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_SINGLE_BEER,
   RECEIVE_REVIEW,
+  // RECEIVE_ALL_REVIEWS
 } from '../actions/beer_actions';
 
 const reviewsReducer = (state = {}, action) => {
