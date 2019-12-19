@@ -2091,6 +2091,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
 
 
 
@@ -2098,8 +2099,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // import BeerDetail from './beer_detail';
-// import HeaderContainer from '../header/header_container';
-// import Header from '../header/header';
+
+ // import Header from '../header/header';
 // import BeerDetail from './beer_detail';
 
 var UserShow =
@@ -2118,18 +2119,25 @@ function (_React$Component) {
     value: function componentDidMount() {
       // this.props.receiveCurrentUser(this.props.userId);
       this.props.requestAllBeers();
-    } // handleDelete(e) {
-    //   e.preventDefault();
-    //   this.props.deleteBeer(this.props.beerId);
-    //   this.props.history.push("/home");
-    //   window.location.reload();
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props.user.currentUser);
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "User Show");
+      var allBeers = this.props.beers;
+      var username = this.props.user.currentUser.users[1].username;
+      var reviews = [];
+      {
+        console.log(this.props);
+      } // for (let i = 0; i < allBeers.length; i++) {
+      //   const beer = allBeers[i];
+      //   // beerNames.push(beer.name);
+      //   reviews.push(beer.reviewIds[0]);
+      // };
+      // console.log(reviews)
+      // let totalReviews = reviews.length
+      // console.log(currentUser.users[1].username)
+
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, " User Show "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, " ", username, " "));
     }
   }]);
 
