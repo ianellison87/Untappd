@@ -90,7 +90,7 @@
 /*!******************************************!*\
   !*** ./frontend/actions/beer_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_ALL_BEERS, RECEIVE_SINGLE_BEER, REMOVE_BEER, CREATE_BEER, RECEIVE_BEERS_ERRORS, RECEIVE_REVIEW, requestAllBeers, requestSingleBeer, createBeer, deleteBeer, receiveAllBeers, createReview, receiveReview, receiveSingleBeer, receiveBeerErrors, removeBeer */
+/*! exports provided: RECEIVE_ALL_BEERS, RECEIVE_SINGLE_BEER, REMOVE_BEER, CREATE_BEER, RECEIVE_BEERS_ERRORS, RECEIVE_REVIEW, RECEIVE_ALL_REVIEWS, requestAllBeers, requestSingleBeer, createBeer, deleteBeer, receiveAllBeers, createReview, requestAllReviews, receiveReview, receiveAllReviews, receiveSingleBeer, receiveBeerErrors, removeBeer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -101,13 +101,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_BEER", function() { return CREATE_BEER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_BEERS_ERRORS", function() { return RECEIVE_BEERS_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_REVIEW", function() { return RECEIVE_REVIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_REVIEWS", function() { return RECEIVE_ALL_REVIEWS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestAllBeers", function() { return requestAllBeers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestSingleBeer", function() { return requestSingleBeer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createBeer", function() { return createBeer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteBeer", function() { return deleteBeer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllBeers", function() { return receiveAllBeers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReview", function() { return createReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestAllReviews", function() { return requestAllReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveReview", function() { return receiveReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllReviews", function() { return receiveAllReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSingleBeer", function() { return receiveSingleBeer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveBeerErrors", function() { return receiveBeerErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeBeer", function() { return removeBeer; });
@@ -119,6 +122,7 @@ var REMOVE_BEER = 'REMOVE__BEER';
 var CREATE_BEER = 'CREATE_BEER';
 var RECEIVE_BEERS_ERRORS = 'RECEIVE_BEERS_ERRORS';
 var RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+var RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 var requestAllBeers = function requestAllBeers() {
   return function (dispatch) {
     return _util_beers_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllBeers"]().then(function (beers) {
@@ -163,6 +167,13 @@ var createReview = function createReview(review) {
     });
   };
 };
+var requestAllReviews = function requestAllReviews() {
+  return function (dispatch) {
+    return _util_beers_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllReviews"]().then(function (reviews) {
+      return dispatch(receiveAllReviews(reviews));
+    });
+  };
+};
 var receiveReview = function receiveReview(_ref) {
   var review = _ref.review,
       average_rating = _ref.average_rating,
@@ -172,6 +183,12 @@ var receiveReview = function receiveReview(_ref) {
     review: review,
     average_rating: average_rating,
     author: author
+  };
+};
+var receiveAllReviews = function receiveAllReviews(reviews) {
+  return {
+    type: RECEIVE_ALL_REVIEWS,
+    reviews: reviews
   };
 };
 var receiveSingleBeer = function receiveSingleBeer(payload) {
@@ -1440,6 +1457,7 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.requestAllBeers();
+      this.props.requestAllReviews();
     }
   }, {
     key: "render",
@@ -1563,9 +1581,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    beers: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["selectAllBeers"])(state)
+    beers: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["selectAllBeers"])(state),
+    reviews: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["selectAllReviews"])(state)
   };
 };
 
@@ -1573,6 +1593,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     requestAllBeers: function requestAllBeers() {
       return dispatch(Object(_actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["requestAllBeers"])());
+    },
+    requestAllReviews: function requestAllReviews() {
+      return dispatch(Object(_actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["requestAllReviews"])());
     }
   };
 };
@@ -2350,6 +2373,9 @@ var reviewsReducer = function reviewsReducer() {
   Object.freeze(state);
 
   switch (action.type) {
+    case _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_ALL_REVIEWS"]:
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.reviews);
+
     case _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_SINGLE_BEER"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.payload.reviews);
 
@@ -2405,17 +2431,21 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
 /*!****************************************!*\
   !*** ./frontend/reducers/selectors.js ***!
   \****************************************/
-/*! exports provided: selectAllBeers, selectBeer, selectReviews, asArray */
+/*! exports provided: selectAllBeers, selectAllReviews, selectBeer, selectReviews, asArray */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectAllBeers", function() { return selectAllBeers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectAllReviews", function() { return selectAllReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectBeer", function() { return selectBeer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectReviews", function() { return selectReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asArray", function() { return asArray; });
 var selectAllBeers = function selectAllBeers(state) {
   return Object.values(state.entities.beers);
+};
+var selectAllReviews = function selectAllReviews(state) {
+  return Object.values(state.entities.reviews);
 };
 var selectBeer = function selectBeer(_ref, beerId) {
   var beers = _ref.beers;
@@ -2659,7 +2689,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*!*****************************************!*\
   !*** ./frontend/util/beers_api_util.js ***!
   \*****************************************/
-/*! exports provided: fetchAllBeers, fetchSingleBeer, createBeer, destroyBeer, createReview */
+/*! exports provided: fetchAllBeers, fetchSingleBeer, createBeer, destroyBeer, fetchAllReviews, createReview */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2668,6 +2698,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSingleBeer", function() { return fetchSingleBeer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createBeer", function() { return createBeer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyBeer", function() { return destroyBeer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllReviews", function() { return fetchAllReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReview", function() { return createReview; });
 var fetchAllBeers = function fetchAllBeers() {
   return $.ajax({
@@ -2694,6 +2725,12 @@ var destroyBeer = function destroyBeer(id) {
   return $.ajax({
     method: 'DELETE',
     url: "api/beers/".concat(id)
+  });
+};
+var fetchAllReviews = function fetchAllReviews() {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/reviews'
   });
 };
 var createReview = function createReview(review) {

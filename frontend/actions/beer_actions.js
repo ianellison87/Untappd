@@ -6,6 +6,7 @@ export const REMOVE_BEER = 'REMOVE__BEER';
 export const CREATE_BEER = 'CREATE_BEER';
 export const RECEIVE_BEERS_ERRORS = 'RECEIVE_BEERS_ERRORS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 
 export const requestAllBeers = () => dispatch => {
   return APIUtil.fetchAllBeers()
@@ -40,14 +41,24 @@ export const createReview = review => dispatch => (
     dispatch(receiveReview(review))
   ))
 );
+
+export const requestAllReviews = () => dispatch => {
+  return APIUtil.fetchAllReviews()
+    .then(reviews => dispatch(receiveAllReviews(reviews)))
+};
     
 export const receiveReview = ({ review, average_rating, author }) => ({
   type: RECEIVE_REVIEW,
   review,
   average_rating,
-  author,
+  author
 });
     
+export const receiveAllReviews = reviews => ({
+  type: RECEIVE_ALL_REVIEWS,
+  reviews
+});
+
 export const receiveSingleBeer = payload => ({
   type: RECEIVE_SINGLE_BEER,
   payload

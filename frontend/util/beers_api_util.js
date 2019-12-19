@@ -37,10 +37,19 @@ export const destroyBeer = id => {
   )
 };
 
+export const fetchAllReviews = () => {
+  return (
+    $.ajax({
+      method: 'GET',
+      url: 'api/reviews'
+    })
+  )
+}
+
 export const createReview = review => (
   $.ajax({
     method: 'POST',
     url: 'api/reviews',
     data: { review }
   })
-);
+  );

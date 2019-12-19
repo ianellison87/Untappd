@@ -12,6 +12,7 @@ import BeerDetail from '../beer_show/beer_detail';
 class ReviewsIndex extends Component {
   componentDidMount() {
     this.props.requestAllBeers();
+    this.props.requestAllReviews();
   }
 
 
