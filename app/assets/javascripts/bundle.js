@@ -1327,9 +1327,11 @@ var Header = function Header(_ref) {
     className: "header-inner"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-left"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/home"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "logo-title"
-  }, "UNBARRELD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "UNBARRELD")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "logo-text"
   }, "DRINK  RESPONSIBLY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header-link"

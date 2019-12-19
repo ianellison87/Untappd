@@ -9,7 +9,7 @@ const Header = ({ currentUser, logout }) => {
       <header className="inner">
         <div className="header-inner">
           <div className="header-left">
-            <h2 className="logo-title">UNBARRELD</h2>
+            <Link to='/home'><h2 className="logo-title">UNBARRELD</h2></Link>
             <p className="logo-text">DRINK  RESPONSIBLY</p>
           </div>
           <div className="header-link">
