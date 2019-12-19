@@ -110,10 +110,11 @@ h5 {
 }
 
 .beers-list-title {
+  position:sticky;
   background: white;
   width: 700px;
   text-align: center;
-  top: 0;
+  top: 52px;
   right: 0;
   bottom: 0;
   left: 0;
