@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 
 import { receiveCurrentUser } from '../../actions/session_actions';
+import { requestAllBeers } from '../../actions/beer_actions'
 // import { usersReducer } from '../../reducers/users_reducer';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, { match }) => {
   const userId = parseInt(match.params.userId);
-  const user = usersReducer(state.entities, userId);
+  const user = receiveCurrentUser(state.entities, userId);
 
 
   return {
@@ -18,6 +19,7 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => ({
   receiveCurrentUser: id => dispatch(receiveCurrentUser(id)),
+  requestAllBeers: () => dispatch(requestAllBeers())
 });
 
 export default connect(

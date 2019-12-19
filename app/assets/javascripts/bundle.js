@@ -2107,64 +2107,29 @@ var UserShow =
 function (_React$Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(UserShow, _React$Component);
 
-  function UserShow(props) {
-    var _this;
-
+  function UserShow() {
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, UserShow);
 
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(UserShow).call(this, props));
-    _this.state = _this.props.user; // this.handleDelete = this.handleDelete.bind(this)
-
-    return _this;
-  } // componentDidMount() {
-  //   this.props.receiveCurrentUser(this.props.userId);
-  // }
-  // handleDelete(e) {
-  //   e.preventDefault();
-  //   this.props.deleteBeer(this.props.beerId);
-  //   this.props.history.push("/home");
-  //   window.location.reload();
-  // }
-
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(UserShow).apply(this, arguments));
+  }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(UserShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // this.props.receiveCurrentUser(this.props.userId);
+      this.props.requestAllBeers();
+    } // handleDelete(e) {
+    //   e.preventDefault();
+    //   this.props.deleteBeer(this.props.beerId);
+    //   this.props.history.push("/home");
+    //   window.location.reload();
+    // }
+
+  }, {
     key: "render",
     value: function render() {
-      // console.log(this.props.reviews)
-      react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "User Show"); // let beer = this.props.beer
-      // let reviews = Object.values(this.props.reviews)
-      // if (!beer) {
-      //   return <div>
-      //     Loading...
-      //   </div>
-      // } else {
-      //   return (
-      //     <div className="beer-show-page">
-      //       <HeaderContainer />
-      //       <div className="top-background"></div>
-      //       <div className="beer-show-item-box">
-      //         <div className="beer-item">
-      //           <img className="beer-logo-show" src={beer.photoUrl} alt="" />
-      //           <ul className="beer-item-stats" >
-      //             <h2 className="beer-item-name">{beer.name}</h2>
-      //             <div className="beer-stats-top">
-      //               <li className="beer-item-ibu">IBU: {beer.ibu}</li>
-      //               <li className="beer-item-abv">ABV: {beer.abv}</li>
-      //             </div>
-      //             <div className="beer-stats-bottom">
-      //               <li className="beer-item-brewed">Brewed by: {beer.brewed_by}</li>
-      //               <li className="beer-item-avg">AVG Rating: {parseFloat(beer.average_rating).toFixed(2)}</li>
-      //             </div>
-      //             <button className="delete-btn" onClick={this.handleDelete}>DELETE</button>
-      //           </ul>
-      //         </div>
-      //       </div>
-      //       <div className="comments">
-      //         <BeerDetail beer={beer} reviews={reviews} />
-      //       </div>
-      //     </div>
-      //   )
-      // }
+      console.log(this.props.user.currentUser);
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "User Show");
     }
   }]);
 
@@ -2186,7 +2151,9 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _user_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user_show */ "./frontend/components/user_show/user_show.jsx");
+/* harmony import */ var _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/beer_actions */ "./frontend/actions/beer_actions.js");
+/* harmony import */ var _user_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user_show */ "./frontend/components/user_show/user_show.jsx");
+
 
  // import { usersReducer } from '../../reducers/users_reducer';
 
@@ -2195,7 +2162,9 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var match = _ref.match;
   var userId = parseInt(match.params.userId);
-  var user = usersReducer(state.entities, userId);
+
+  var user = Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["receiveCurrentUser"])(state.entities, userId);
+
   return {
     userId: userId,
     user: user,
@@ -2207,11 +2176,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     receiveCurrentUser: function receiveCurrentUser(id) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["receiveCurrentUser"])(id));
+    },
+    requestAllBeers: function requestAllBeers() {
+      return dispatch(Object(_actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["requestAllBeers"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_user_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_user_show__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
