@@ -111,8 +111,7 @@ h5 {
 
 .beers-list-title {
   position:sticky;
-  background: white;
-  width: 700px;
+  background: #ffcb00;
   text-align: center;
   top: 52px;
   right: 0;
@@ -136,6 +135,7 @@ h5 {
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 5px;
+  border: 1px solid;
 }
 
 .new-beer-btn:hover {
@@ -144,6 +144,8 @@ h5 {
 }
 
 .beer-list {
+  color: white;
+  font-weight: bold;
   font-weight: 600px;
   font-size: 28px;
 }

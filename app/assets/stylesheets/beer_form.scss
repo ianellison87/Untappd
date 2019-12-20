@@ -1,6 +1,6 @@
 .form-page {
   background-color: #f5f2e8;
-  height: 100vw;
+  height: 100vh;
 }
 
 .beer-form-container {
@@ -57,4 +57,25 @@ input.create-btn {
 .preview img {
   height: 200px;
   width: 200px;
+}
+
+.comment-form-box {
+  background: white;
+  position: fixed;
+  width: 700px;
+  text-align: center;
+  bottom: 40%;
+  right: 0;
+  left: 0;
+  max-width: 150%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid grey;
+  padding: 15px;
+  padding-bottom: 50px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
 }

@@ -5,9 +5,9 @@ const Review = ({ review, author, beer, url }) => {
 
   const { rating, body, beer_id } = review;
   // console.log(review);
-  console.log(url);
+  // console.log(url);
   return (
-    <div>
+    <div className="single-comment">
       <ul>
         <li>{beer[beer_id]}</li>
         <li><span className="body-text">"{body}"</span> by <span className="author">{author.username}</span></li>

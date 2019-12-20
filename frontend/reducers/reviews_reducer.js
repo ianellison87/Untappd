@@ -8,6 +8,7 @@ import {
 
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
+  console.log(action)
   switch (action.type) {
     case RECEIVE_ALL_REVIEWS:
       return merge({}, state, action.reviews);

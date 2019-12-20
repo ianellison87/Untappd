@@ -10,27 +10,42 @@ import HeaderContainer from '../header/header_container';
 import BeerDetail from '../beer_show/beer_detail';
 
 class ReviewsIndex extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      reviews: this.props.reviews
+    }
+
+  }
+
   componentDidMount() {
     this.props.requestAllBeers();
     this.props.requestAllReviews();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps && nextProps.reviews) {
+      this.setState({reviews: nextProps.reviews})
+    }
   }
 
 
   render() {
     const  allBeers  = this.props.beers;
     // console.log(this.props.beers)
-    let reviews = [];
+    // let reviews = [];
     let beerNames = [];
-    let urls = {};
-     
+    // let urls = {};
+     console.log(reviews)
       for (let i = 0; i < allBeers.length; i++) {
         const beer = allBeers[i];
         beerNames.push(beer.name);
-        reviews.push(beer.reviewIds[0]);
-        urls[beer.id] = beer.photoUrl;
+        // reviews.push(beer.reviewIds[0]);
+        // urls[beer.id] = beer.photoUrl;
       };
       
-    reviews = reviews.flat();
+    let reviews = this.state.reviews
       
     return (
       

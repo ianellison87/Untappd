@@ -170,7 +170,8 @@ var createReview = function createReview(review) {
 var requestAllReviews = function requestAllReviews() {
   return function (dispatch) {
     return _util_beers_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllReviews"]().then(function (reviews) {
-      return dispatch(receiveAllReviews(reviews));
+      console.log(reviews);
+      dispatch(receiveAllReviews(reviews));
     });
   };
 };
@@ -1086,6 +1087,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../header/header_container */ "./frontend/components/header/header_container.js");
+
 
 
 
@@ -1146,6 +1149,10 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-page"
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "comment-form-box"
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "review-form"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
         onSubmit: this.handleSubmit
@@ -1162,7 +1169,7 @@ function (_React$Component) {
         type: "submit"
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         onClick: this.navigateToBeerShow
-      }, "Cancel"));
+      }, "Cancel"))));
     }
   }]);
 
@@ -1449,10 +1456,16 @@ var ReviewsIndex =
 function (_Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(ReviewsIndex, _Component);
 
-  function ReviewsIndex() {
+  function ReviewsIndex(props) {
+    var _this;
+
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ReviewsIndex);
 
-    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(ReviewsIndex).apply(this, arguments));
+    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(ReviewsIndex).call(this, props));
+    _this.state = {
+      reviews: _this.props.reviews
+    };
+    return _this;
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ReviewsIndex, [{
@@ -1462,23 +1475,32 @@ function (_Component) {
       this.props.requestAllReviews();
     }
   }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps && nextProps.reviews) {
+        this.setState({
+          reviews: nextProps.reviews
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var allBeers = this.props.beers; // console.log(this.props.beers)
+      // let reviews = [];
 
-      var reviews = [];
-      var beerNames = [];
-      var urls = {};
+      var beerNames = []; // let urls = {};
+
+      console.log(reviews);
 
       for (var i = 0; i < allBeers.length; i++) {
         var beer = allBeers[i];
-        beerNames.push(beer.name);
-        reviews.push(beer.reviewIds[0]);
-        urls[beer.id] = beer.photoUrl;
+        beerNames.push(beer.name); // reviews.push(beer.reviewIds[0]);
+        // urls[beer.id] = beer.photoUrl;
       }
 
       ;
-      reviews = reviews.flat();
+      var reviews = this.state.reviews;
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "beers-index"
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -1528,9 +1550,11 @@ var Review = function Review(_ref) {
   var rating = review.rating,
       body = review.body,
       beer_id = review.beer_id; // console.log(review);
+  // console.log(url);
 
-  console.log(url);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer[beer_id]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "single-comment"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer[beer_id]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "body-text"
   }, "\"", body, "\""), " by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "author"
@@ -2353,6 +2377,7 @@ var reviewsReducer = function reviewsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  console.log(action);
 
   switch (action.type) {
     case _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_ALL_REVIEWS"]:

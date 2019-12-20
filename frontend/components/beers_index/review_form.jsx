@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import HeaderContainer from '../header/header_container';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -33,30 +34,35 @@ class ReviewForm extends React.Component {
 
   render() {
     return (
-      <div className="review-form">
-        <form onSubmit={this.handleSubmit}>
+      <div className='form-page'>
+        <HeaderContainer/>
+        <div className='comment-form-box'>
+          <div className="review-form">
+            <form onSubmit={this.handleSubmit}>
 
-          <label>Comment</label>
-          <br />
+              <label>Comment</label>
+              <br />
 
-          <textarea
-            cols="30"
-            rows="10"
-            value={this.state.body}
-            onChange={this.update("body")}
-          />
-          <br />
-          <label>Rating</label>
-          <br />
-          <input
-            type="number"
-            value={this.state.rating}
-            onChange={this.update("rating")}
-          />
-          <br />
-          <input type="submit" />
-        </form>
-        <button onClick={this.navigateToBeerShow}>Cancel</button>
+              <textarea
+                cols="30"
+                rows="10"
+                value={this.state.body}
+                onChange={this.update("body")}
+              />
+              <br />
+              <label>Rating</label>
+              <br />
+              <input
+                type="number"
+                value={this.state.rating}
+                onChange={this.update("rating")}
+              />
+              <br />
+              <input type="submit" />
+            </form>
+            <button onClick={this.navigateToBeerShow}>Cancel</button>
+          </div>
+        </div>
       </div>
     );
   }
