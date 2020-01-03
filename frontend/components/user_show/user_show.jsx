@@ -35,14 +35,16 @@ class UserShow extends React.Component {
       // console.log(currentUser.users[1].username)
       
       return (
-        <div>
+        <div className="form-page">
             <HeaderContainer/>
+            <div className="top-background"></div>
             <br/> 
             <br/>
             <br/>
             <br/>
-            <p> User Show </p>
-            <p> { username } </p>
+            <p> This functionality is down right now </p>
+            <p> We at Unbarreld are working without breaks in order to bring it back up as quickly as possible </p>
+            <p> Thank you for your patience</p>
             {/* <p> { totalReviews } </p> */}
 
 
