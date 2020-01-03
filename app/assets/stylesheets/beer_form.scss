@@ -1,6 +1,7 @@
 .form-page {
   background-color: #f5f2e8;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 50px;
 }
 
 .beer-form-container {
@@ -29,7 +30,8 @@
 }
 
 form.beer-form {
-  box-shadow: 1px, 1px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid grey;
 }
 
 input.create-btn {
