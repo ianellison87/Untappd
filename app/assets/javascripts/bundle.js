@@ -1149,7 +1149,9 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-page"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "top-background"
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "comment-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "review-form"

@@ -35,6 +35,7 @@ class ReviewForm extends React.Component {
   render() {
     return (
       <div className='form-page'>
+        <div className="top-background"></div>
         <HeaderContainer/>
         <div className='comment-form-box'>
           <div className="review-form">
