@@ -7,8 +7,8 @@ const Review = ({ review, author, beer, url }) => {
   return (
     <div className="single-comment">
       <ul>
-        <li>{beer[beer_id]}</li>
-        <li><span className="body-text">"{body}"</span> by <span className="author">{author.username}</span></li>
+        <li><span className="author">{beer[beer_id]}</span></li>
+        <li><span className="body-text">"{body}"</span> {/*by <span className="author">{author.username}</span>*/}</li>
         <li><img className="review-photo" src={url} /></li>
         <li className="rating-text">Rating: {rating}</li>
       </ul>
