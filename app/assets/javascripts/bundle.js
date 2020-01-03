@@ -170,7 +170,6 @@ var createReview = function createReview(review) {
 var requestAllReviews = function requestAllReviews() {
   return function (dispatch) {
     return _util_beers_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllReviews"]().then(function (reviews) {
-      console.log(reviews);
       dispatch(receiveAllReviews(reviews));
     });
   };
@@ -640,11 +639,11 @@ var Review = function Review(_ref) {
   var rating = review.rating,
       body = review.body,
       photoUrl = review.photoUrl;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, console.log(author), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "body-text"
   }, "\"", body, "\""), " - by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "author"
-  }, author.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, author.username, users)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "review-photo",
     src: photoUrl
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1163,6 +1162,8 @@ function (_React$Component) {
         onChange: this.update("body")
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", null, "Rating"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
         type: "number",
+        min: "1",
+        max: "5",
         value: this.state.rating,
         onChange: this.update("rating")
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -1445,8 +1446,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import BeerFormContainer from './beer_form_container';
-// import BeerShowContainer from '../beer_show/beer_show_container'
 
 
 
@@ -1486,17 +1485,12 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var allBeers = this.props.beers; // console.log(this.props.beers)
-      // let reviews = [];
-
-      var beerNames = []; // let urls = {};
-
-      console.log(reviews);
+      var allBeers = this.props.beers;
+      var beerNames = [];
 
       for (var i = 0; i < allBeers.length; i++) {
         var beer = allBeers[i];
-        beerNames.push(beer.name); // reviews.push(beer.reviewIds[0]);
-        // urls[beer.id] = beer.photoUrl;
+        beerNames.push(beer.name);
       }
 
       ;
@@ -1549,9 +1543,7 @@ var Review = function Review(_ref) {
       url = _ref.url;
   var rating = review.rating,
       body = review.body,
-      beer_id = review.beer_id; // console.log(review);
-  // console.log(url);
-
+      beer_id = review.beer_id;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "single-comment"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, beer[beer_id]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1591,17 +1583,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reviews_index_review_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reviews_index/review_index */ "./frontend/components/reviews_index/review_index.jsx");
 /* harmony import */ var _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/beer_actions */ "./frontend/actions/beer_actions.js");
 /* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
-// import { connect } from 'react-redux';
-// import ReviewsIndex from './review_index';
-// // import { requestAllReviews } from '../../reducers/beers_reducer';
-// import { selectAllReviews } from '../../reducers/selectors';
-// const mapStateToProps = state => ({
-//   reviews: selectAllReviews(state)
-// });
-// // const mapDispatchToProps = dispatch => ({
-// //   requestAllReviews: () => dispatch(requestAllReviews())
-// // });
-// export default connect(mapStateToProps)(ReviewsIndex);
 
 
 
@@ -2377,7 +2358,6 @@ var reviewsReducer = function reviewsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  console.log(action);
 
   switch (action.type) {
     case _actions_beer_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_ALL_REVIEWS"]:
@@ -32547,7 +32527,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

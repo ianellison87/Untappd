@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 const Review = ({ review, author, beer, url }) => {
 
   const { rating, body, beer_id } = review;
-  // console.log(review);
-  // console.log(url);
   return (
     <div className="single-comment">
       <ul>

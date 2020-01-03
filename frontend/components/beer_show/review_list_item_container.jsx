@@ -6,7 +6,8 @@ const Review = ({ review, author }) => {
   return (
     <div>
       <ul>
-        <li><span className="body-text">"{body}"</span> - by <span className="author">{author.username}</span></li>
+    {console.log(author)}
+        <li><span className="body-text">"{body}"</span> - by <span className="author">{author.username}{users}</span></li>
         <li><img className="review-photo" src={photoUrl} /></li>
         <li className="rating-text">Rating: {rating}</li>
       </ul>

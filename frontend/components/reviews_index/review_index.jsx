@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom'
-
 import Review from './review_index_item';
 import BeersIndexItem from './review_index_item';
-// import BeerFormContainer from './beer_form_container';
-// import BeerShowContainer from '../beer_show/beer_show_container'
 import HeaderContainer from '../header/header_container';
 import BeerDetail from '../beer_show/beer_detail';
 
@@ -33,20 +30,17 @@ class ReviewsIndex extends Component {
 
   render() {
     const  allBeers  = this.props.beers;
-    // console.log(this.props.beers)
-    // let reviews = [];
+
     let beerNames = [];
-    // let urls = {};
-     console.log(reviews)
+  
       for (let i = 0; i < allBeers.length; i++) {
         const beer = allBeers[i];
         beerNames.push(beer.name);
-        // reviews.push(beer.reviewIds[0]);
-        // urls[beer.id] = beer.photoUrl;
+    
       };
-      
+
     let reviews = this.state.reviews
-      
+    
     return (
       
       <div className="beers-index">

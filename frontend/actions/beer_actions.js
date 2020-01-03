@@ -45,7 +45,6 @@ export const createReview = review => dispatch => (
 export const requestAllReviews = () => dispatch => {
   return APIUtil.fetchAllReviews()
     .then(reviews => {
-      console.log(reviews);
       dispatch(receiveAllReviews(reviews)
       
     )})
